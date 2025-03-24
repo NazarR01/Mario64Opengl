@@ -17,7 +17,7 @@ Este proyecto es un intento de recrear un juego de **Super Mario 3D** utilizando
 ### **Software Necesario**  
 🔹 **Compilador C++** (GCC, Clang o MSVC).  
 🔹 **CMake** para la gestión del proyecto.  
-🔹 **Bibliotecas gráficas**: OpenGL/Vulkan.  
+🔹 **Bibliotecas gráficas**: OpenGL.  
 🔹 **SDL2** (para entrada y sonido).  
 🔹 **GLFW** (para manejo de ventanas).  
 
