@@ -7,7 +7,7 @@ Este proyecto es un intento de recrear un juego de **Super Mario 3D** utilizando
 
 ## 🚀 **Características**  
 ✅ Integración con **libsm64** para físicas y animaciones realistas de Mario.  
-✅ Renderizado 3D con **OpenGL**/**Vulkan**.  
+✅ Renderizado 3D con **OpenGL** 
 ✅ Soporte para modelos y niveles personalizados.  
 ✅ Controles compatibles con **teclado y mando**.  
 ✅ Implementación de colisiones y detección de físicas avanzada.  
