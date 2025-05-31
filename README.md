@@ -57,7 +57,7 @@ This is a fun fan-made version of the classic Mario 64 game, built using the **U
 ### 💡 Setup Instructions
 
 1. Install [Unity Hub](https://unity.com/download).
-2. Inside Unity Hub, install Unity (version 2021.x or newer).
+2. Inside Unity Hub, install Unity (version 2019.3.10f1 or newer).
 3. Clone this repo:
 
    ```bash
