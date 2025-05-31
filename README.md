@@ -46,7 +46,7 @@ This is a fun fan-made version of the classic Mario 64 game, built using the **U
 
 ### 🧰 Technologies Used
 
-- **Unity 2021 or newer**
+- **Unity 2019.3.10f1**
 - **Visual Studio Community 2019**
 - **C#**
 - **OpenGL (indirectly via plugins)**
