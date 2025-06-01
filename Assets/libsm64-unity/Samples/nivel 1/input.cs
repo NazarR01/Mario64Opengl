@@ -4,9 +4,11 @@ using LibSM64;
 public class input : SM64InputProvider
 {
     public GameObject cameraObject;
+
+
     public float mouseSensitivity = 2.0f;
     private float yaw = 0f;
-    private float pitch = 0f;
+    private float pitch = 35f;
 
     public float cameraDistance = 5f;
     public float zoomSpeed = 2f;
@@ -23,15 +25,18 @@ public class input : SM64InputProvider
     {
         // Rotación de cámara con el mouse
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
         yaw += mouseX;
-        pitch -= mouseY;
-        pitch = Mathf.Clamp(pitch, -80f, 80f);
+       // pitch -= mouseY;
+       // pitch = Mathf.Clamp(pitch, -80f, 80f);
 
         // Zoom con scroll
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         cameraDistance -= scroll * zoomSpeed;
         cameraDistance = Mathf.Clamp(cameraDistance, minZoom, maxZoom);
+
+
+
 
         cameraObject.transform.rotation = Quaternion.Euler(pitch, yaw, 0f);
 
@@ -40,8 +45,8 @@ public class input : SM64InputProvider
         Vector3 desiredCamPos = marioPos - cameraObject.transform.forward * cameraDistance;
         cameraObject.transform.position = desiredCamPos;
         cameraObject.transform.LookAt(marioPos + Vector3.up * 1.5f);
-    }
 
+    }
     public override Vector3 GetCameraLookDirection()
     {
         return cameraObject.transform.forward;
@@ -62,8 +67,8 @@ public class input : SM64InputProvider
                 return Input.GetMouseButton(0); // clic izquierdo
             case Button.Stomp:
                 return Input.GetKey(KeyCode.LeftShift);
-            
+
         }
-        return false;
-    }
+        return false;
+    }
 }
