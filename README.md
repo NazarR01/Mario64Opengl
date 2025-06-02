@@ -52,7 +52,6 @@ This is a fun fan-made version of the classic Mario 64 game, built using the **U
 - **OpenGL (indirectly via plugins)**
 - **libsm64**: A native library used to bring real Mario 64 logic into Unity
 - **GLFW** and **GLEW** (optional for low-level rendering)
-- **SOIL2** (for texture loading, optional if used in your project)
 
 ### 💡 Setup Instructions
 
