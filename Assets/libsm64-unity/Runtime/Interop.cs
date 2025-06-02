@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace LibSM64
 {
-    internal static class Interop
+    public static class Interop
     {
         public const float SCALE_FACTOR = 100.0f;
 

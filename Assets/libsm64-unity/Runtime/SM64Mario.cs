@@ -127,6 +127,7 @@ namespace LibSM64
             marioMesh.RecalculateBounds();
             marioMesh.RecalculateTangents();
         }
+public Interop.SM64MarioState CurrentState => states[buffIndex];
 
         void OnDrawGizmos()
         {
