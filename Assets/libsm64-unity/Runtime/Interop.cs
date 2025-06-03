@@ -2,6 +2,14 @@ using System;
 using UnityEngine;
 using System.Runtime.InteropServices;
 
+
+
+
+
+
+
+
+
 namespace LibSM64
 {
     public static class Interop
@@ -77,7 +85,7 @@ namespace LibSM64
                 {
                     return a - b * Mathf.Floor( a / b );
                 }
-                
+
                 float fixAngle( float a )
                 {
                     return fmod( a + 180.0f, 360.0f ) - 180.0f;
@@ -126,6 +134,9 @@ namespace LibSM64
         static extern void sm64_surface_object_move( uint objectId, ref SM64ObjectTransform transform );
         [DllImport("sm64")]
         static extern void sm64_surface_object_delete( uint objectId );
+
+        [DllImport("sm64")]
+        static extern void sm64_mario_trigger_death(uint marioId, int cutscene);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         delegate void DebugPrintFuncDelegate(string str);

@@ -23,12 +23,15 @@ namespace LibSM64
         Mesh marioMesh;
         uint marioId;
 
+        public uint MarioID => marioId;
+
         void OnEnable()
         {
             SM64Context.RegisterMario( this );
 
             var initPos = transform.position;
             marioId = Interop.MarioCreate( new Vector3( -initPos.x, initPos.y, initPos.z ) * Interop.SCALE_FACTOR );
+
 
             inputProvider = GetComponent<SM64InputProvider>();
             if( inputProvider == null )
