@@ -122,6 +122,9 @@ namespace LibSM64
 
         [DllImport("sm64")]
         static extern uint sm64_surface_object_create( ref SM64SurfaceObject surfaceObject );
+[DllImport("sm64")]
+public static extern void sm64_mario_apply_damage(int marioId, int damageType);
+
         [DllImport("sm64")]
         static extern void sm64_surface_object_move( uint objectId, ref SM64ObjectTransform transform );
         [DllImport("sm64")]

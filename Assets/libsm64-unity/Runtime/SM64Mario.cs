@@ -21,7 +21,14 @@ namespace LibSM64
 
         GameObject marioRendererObject;
         Mesh marioMesh;
-        uint marioId;
+        public uint marioId;
+
+
+    private static extern void sm64_mario_apply_damage(int marioId, int damageType);
+public void ApplyDamage(int damageType)
+{
+    sm64_mario_apply_damage((int)marioId, damageType);
+}
 
         void OnEnable()
         {

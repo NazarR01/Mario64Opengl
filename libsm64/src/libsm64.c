@@ -175,6 +175,42 @@ SM64_LIB_FN int32_t sm64_mario_create( int16_t x, int16_t y, int16_t z )
 
     return marioIndex;
 }
+SM64_LIB_FN void sm64_mario_apply_damage(int32_t marioId, int damageType)
+{
+    if (marioId >= s_mario_instance_pool.size || s_mario_instance_pool.objects[marioId] == NULL)
+        return;
+
+    global_state_bind(((struct MarioInstance *)s_mario_instance_pool.objects[marioId])->globalState);
+
+    struct MarioState *m = gMarioState;
+
+    // Evita sobrescribir si ya está en una acción de daño
+    if (m->action & ACT_FLAG_INVULNERABLE || m->hurtCounter > 0)
+        return;
+
+    m->invincTimer = 30;   // breve invulnerabilidad
+    m->hurtCounter = 10;   // daño visual
+    m->health -= 0x100;    // 1/8 de vida
+
+    switch (damageType)
+    {
+        case 0: // Fuego
+            set_mario_action(m, ACT_BURNING_JUMP, 0);
+            break;
+        case 1: // Golpe normal (retroceso hacia atrás)
+            set_mario_action(m, ACT_BACKWARD_GROUND_KB, 0);
+            break;
+        case 2: // Golpe fuerte (alto retroceso)
+            set_mario_action(m, ACT_BACKWARD_AIR_KB, 0);
+            break;
+        case 3: // Daño eléctrico
+            set_mario_action(m, ACT_SHOCKED, 0);
+            break;
+        default:
+            set_mario_action(m, ACT_BACKWARD_GROUND_KB, 0);
+            break;
+    }
+}
 
 SM64_LIB_FN void sm64_mario_tick( int32_t marioId, const struct SM64MarioInputs *inputs, struct SM64MarioState *outState, struct SM64MarioGeometryBuffers *outBuffers )
 {

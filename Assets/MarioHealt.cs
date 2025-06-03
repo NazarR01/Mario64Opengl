@@ -26,8 +26,11 @@ private const float MIN_HEALTH = 0x000;
         healthBar.value = healthRatio;
 
         if (healthRatio == 0.1171875)
-        {
+        {   
             ShowGameOver();
+	   
+FindObjectOfType<Gameover>().TriggerGameOver();
+
         }
     }
 
