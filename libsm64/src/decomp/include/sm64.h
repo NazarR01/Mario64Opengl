@@ -432,4 +432,5 @@
 
 #define C_BUTTONS     (U_CBUTTONS | D_CBUTTONS | L_CBUTTONS | R_CBUTTONS   )
 
+
 #endif // SM64_H

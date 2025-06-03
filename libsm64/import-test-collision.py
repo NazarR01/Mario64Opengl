@@ -20,7 +20,6 @@ def main():
     verts = []
     tris = []
     mode = ""
-
     for line in in_lines:
         if not line.strip().startswith("COL_"):
             continue;
