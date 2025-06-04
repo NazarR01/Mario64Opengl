@@ -68,6 +68,7 @@ enum
     SM64_TEXTURE_HEIGHT = 64,
     SM64_GEO_MAX_TRIANGLES = 1024,
 };
+extern SM64_LIB_FN short sm64_mario_get_health(int marioId);
 
 extern SM64_LIB_FN void sm64_global_init( uint8_t *rom, uint8_t *outTexture, SM64DebugPrintFunctionPtr debugPrintFunction );
 extern SM64_LIB_FN void sm64_global_terminate( void );
@@ -82,5 +83,7 @@ extern SM64_LIB_FN uint32_t sm64_surface_object_create( const struct SM64Surface
 extern SM64_LIB_FN void sm64_surface_object_move( uint32_t objectId, const struct SM64ObjectTransform *transform );
 extern SM64_LIB_FN void sm64_surface_object_delete( uint32_t objectId );
 extern SM64_LIB_FN void sm64_mario_apply_damage(int32_t marioId, int damageType);
+extern SM64_LIB_FN void sm64_mario_set_cutscene_action(int32_t marioId, int action, int actionArg);
+
 
 #endif//LIB_SM64_H
