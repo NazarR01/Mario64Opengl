@@ -31,6 +31,7 @@
 #include "load_anim_data.h"
 #include "load_tex_data.h"
 #include "obj_pool.h"
+#include "decomp/game/mario_actions_cutscene.h"
 
 static struct AllocOnlyPool *s_mario_geo_pool = NULL;
 static struct GraphNode *s_mario_graph_node = NULL;
