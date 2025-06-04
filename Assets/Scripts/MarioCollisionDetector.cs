@@ -9,6 +9,8 @@ public class MarioCollisionDetector : MonoBehaviour
     public float colliderRadius = 0.5f;
     public float colliderHeight = 1.8f;
     public float colliderYOffset = 0.9f;
+    public int marioId = 0;
+    public int damageType = 0;
 
     [Header("Filtro de colisiones")]
     public string enemyTag = "Enemy";
@@ -78,6 +80,7 @@ public class MarioCollisionDetector : MonoBehaviour
         if (estaMuerto) return;
         vidasRestantes--;
         Debug.Log($"Mario ha sido golpeado por {enemyCollider.name}. Vidas restantes: {vidasRestantes}");
+        Interop.sm64_mario_apply_damage(marioId, damageType);
         if (vidasRestantes <= 0)
         {
             estaMuerto = true;
