@@ -92,6 +92,20 @@ SM64_LIB_FN void sm64_global_init( uint8_t *rom, uint8_t *outTexture, SM64DebugP
 
     memory_init();
 }
+SM64_LIB_FN void sm64_mario_set_cutscene_action(int32_t marioId, int action, int actionArg)
+{
+    if (marioId >= s_mario_instance_pool.size || s_mario_instance_pool.objects[marioId] == NULL)
+        return;
+
+    // Carga el estado global para el Mario que queremos modificar
+    global_state_bind(((struct MarioInstance *)s_mario_instance_pool.objects[marioId])->globalState);
+
+    if (gMarioState != NULL)
+    {
+        // Cambia la acción de Mario a la acción/cutscene deseada
+        set_mario_action(gMarioState, action, actionArg);
+    }
+}
 
 SM64_LIB_FN void sm64_global_terminate( void )
 {
@@ -190,7 +204,7 @@ SM64_LIB_FN void sm64_mario_apply_damage(int32_t marioId, int damageType)
 
     m->invincTimer = 30;   // breve invulnerabilidad
     m->hurtCounter = 10;   // daño visual
-    m->health -= 0x100;    // 1/8 de vida
+    m->health -= 0x010;    // 1/8 de vida
 
     switch (damageType)
     {
@@ -203,13 +217,36 @@ SM64_LIB_FN void sm64_mario_apply_damage(int32_t marioId, int damageType)
         case 2: // Golpe fuerte (alto retroceso)
             set_mario_action(m, ACT_BACKWARD_AIR_KB, 0);
             break;
-        case 3: // Daño eléctrico
+        case 3: // Daño normal
+            set_mario_action(m, ACT_FORWARD_AIR_KB, 0);
+            break;
+	 case 4: // Daño normal
+            set_mario_action(m, ACT_HARD_FORWARD_GROUND_KB, 0);
+            break;
+	case 5: // Daño normal
+            set_mario_action(m, ACT_HARD_BACKWARD_GROUND_KB, 0);
+            break;
+	case 6: // Daño normal
+            set_mario_action(m, ACT_SOFT_BACKWARD_GROUND_KB, 0);
+            break;
+	case 7: // Daño normal
+            set_mario_action(m, ACT_SOFT_FORWARD_GROUND_KB, 0);
+            break;
+        case 8: // Daño eléctrico
             set_mario_action(m, ACT_SHOCKED, 0);
             break;
         default:
             set_mario_action(m, ACT_BACKWARD_GROUND_KB, 0);
             break;
     }
+}
+SM64_LIB_FN short sm64_mario_get_health(int marioId)
+{
+   
+    struct MarioState *m = gMarioState;
+    if (!m) return 0;
+
+    return m->health;
 }
 
 SM64_LIB_FN void sm64_mario_tick( int32_t marioId, const struct SM64MarioInputs *inputs, struct SM64MarioState *outState, struct SM64MarioGeometryBuffers *outBuffers )
