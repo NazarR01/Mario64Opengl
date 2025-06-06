@@ -6,6 +6,9 @@ TagManager:
   tags:
   - gameOverPanel
   - Star
+  - Enemy
+  - Goomba
+  - Boulder
   layers:
   - Default
   - TransparentFX

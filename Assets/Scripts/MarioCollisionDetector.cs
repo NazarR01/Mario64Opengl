@@ -90,4 +90,14 @@ public class MarioCollisionDetector : MonoBehaviour
             Debug.Log("Mario ha muerto. Reinicia la escena para volver a jugar.");
         }
     }
+    
+    public void MatarInstantaneamente()
+    {
+    if (estaMuerto) return;
+
+    vidasRestantes = 0;
+    estaMuerto = true;
+    Interop.sm64_mario_apply_damage(marioId, damageType);
+    Debug.Log("Mario ha muerto por quedarse sin tiempo.");
+    }
 }

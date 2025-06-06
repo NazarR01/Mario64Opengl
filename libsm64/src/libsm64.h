@@ -84,6 +84,6 @@ extern SM64_LIB_FN void sm64_surface_object_move( uint32_t objectId, const struc
 extern SM64_LIB_FN void sm64_surface_object_delete( uint32_t objectId );
 extern SM64_LIB_FN void sm64_mario_apply_damage(int32_t marioId, int damageType);
 extern SM64_LIB_FN void sm64_mario_set_cutscene_action(int32_t marioId, int action, int actionArg);
-
-
+extern SM64_LIB_FN void sm64_mario_set_health(int marioId, short newHealth);
+extern SM64_LIB_FN void sm64_mario_set_action(int marioId, int action, int actionArg);
 #endif//LIB_SM64_H

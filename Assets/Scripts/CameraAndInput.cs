@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using LibSM64;
 
 public class CameraAndInput : SM64InputProvider
 {
     [Header("Referencia a la cámara")]
-    [Tooltip("Arrastra aquí tu Camera principal (el GameObject que contiene Camera).")]
+    [Tooltip("Arrastra aquí tu cámara principal (el GameObject que contiene Camera).")]
     public GameObject cameraObject;
 
     [Header("Rotación con Mouse")]
@@ -30,20 +31,31 @@ public class CameraAndInput : SM64InputProvider
     public float maxZoom = 10f;
 
     [Header("Offset vertical para LookAt")]
-    [Tooltip("Altura a la que la cámara mirará la cabeza de Mario y desde donde se lanza el raycast.")]
+    [Tooltip("Altura a la que la cámara mirará la cabeza de Mario.")]
     public float lookAtHeight = 1.5f;
 
-    [Header("Evitar paredes")]
-    [Tooltip("Radio del spherecast usado para detectar colisión de la cámara contra obstáculos.")]
-    public float collisionSphereRadius = 0.2f;
+    // --- Para el Star Cutscene ---
+    private bool inStarCutscene = false;
+    private Vector3 savedPosition;
+    private Quaternion savedRotation;
+    private float savedYaw;
+    private float savedDistance;
 
-    [Tooltip("Pequeño offset para que la cámara no se quede pegada justo en el punto de impacto.")]
-    public float wallOffset = 0.1f;
+    [Header("Star Cutscene Settings")]
+    [Tooltip("Duración total de la cinemática (en segundos).")]
+    public float starCutsceneDuration = 3.0f;
+
+    [Tooltip("Radio extra alrededor de Mario para la cinemática.")]
+    public float starCutsceneRadiusOffset = 2.5f;
+
+    [Tooltip("Altura extra a la que subirá la cámara durante la cinemática.")]
+    public float starCutsceneHeightOffset = 1.5f;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
         if (cameraObject == null)
             Debug.LogError("[CameraAndInput] Debes arrastrar tu cámara principal al campo cameraObject.");
     }
@@ -51,6 +63,7 @@ public class CameraAndInput : SM64InputProvider
     void Update()
     {
         if (cameraObject == null) return;
+        if (inStarCutscene) return; // sin control normal durante la cinemática
 
         // 1) Rotación horizontal con el mouse
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
@@ -64,38 +77,16 @@ public class CameraAndInput : SM64InputProvider
         // 3) Aplicamos rotación: pitch fijo en X, yaw variable en Y
         cameraObject.transform.rotation = Quaternion.Euler(fixedPitch, yaw, 0f);
 
-        // 4) Calculamos posición deseada DETRÁS de Mario (sin colisión)
+        // 4) Calculamos posición deseada DETRÁS de Mario
         Vector3 marioPos = transform.position;
         Vector3 forward = cameraObject.transform.forward;
         Vector3 idealCamPos = marioPos - forward * cameraDistance;
         idealCamPos.y = marioPos.y + lookAtHeight;
 
-        // 5) Raycast/SphereCast para evitar que la cámara quede tras paredes
-        Vector3 rayOrigin = new Vector3(marioPos.x, marioPos.y + lookAtHeight, marioPos.z);
-        Vector3 dir = (idealCamPos - rayOrigin).normalized;
-        float dist = Vector3.Distance(rayOrigin, idealCamPos);
-
-        RaycastHit hit;
-        // Usamos SphereCast para darle un poco de grosor a la cámara
-        if (Physics.SphereCast(rayOrigin, collisionSphereRadius, dir, out hit, dist))
-        {
-            // Hay un muro entre Mario y la posición deseada de la cámara
-            // Ajustamos la posición para que quede un poco antes del muro
-            Vector3 hitPoint = hit.point;
-            Vector3 adjustedPos = hitPoint - dir * wallOffset;
-            cameraObject.transform.position = adjustedPos;
-        }
-        else
-        {
-            // No hay muro en el camino, la cámara va a la posición ideal
-            cameraObject.transform.position = idealCamPos;
-        }
-
-        // 6) La cámara ya está ubicada. No necesitamos LookAt(),
-        //    porque rotación ya viene de Quaternion.Euler(fixedPitch, yaw, 0)
-        //    y el forward apunta hacia la posición de Mario (aprox).
+        cameraObject.transform.position = idealCamPos;
     }
 
+    // Métodos de SM64InputProvider
     public override Vector3 GetCameraLookDirection()
     {
         return cameraObject != null
@@ -120,5 +111,84 @@ public class CameraAndInput : SM64InputProvider
                 return Input.GetKey(KeyCode.LeftShift);
         }
         return false;
+    }
+
+    /// <summary>
+    /// Llama esto desde otro script (ej. Star.cs) para lanzar la cinemática de Star.
+    /// </summary>
+    public void PlayStarCutscene()
+    {
+        if (!inStarCutscene)
+        {
+            StartCoroutine(StarCutsceneRoutine());
+        }
+    }
+
+    /// <summary>
+    /// Corrutina que desplaza la cámara en un arco circular/elevado alrededor de Mario
+    /// durante starCutsceneDuration segundos y luego restaura pos/rotación original.
+    /// </summary>
+    private IEnumerator StarCutsceneRoutine()
+    {
+        inStarCutscene = true;
+
+        // 1) Guardar valores actuales
+        savedPosition = cameraObject.transform.position;
+        savedRotation = cameraObject.transform.rotation;
+        savedYaw      = yaw;
+        savedDistance = cameraDistance;
+
+        Vector3 marioStart = transform.position; // posición de Mario al inicio
+
+        float halfTime = starCutsceneDuration / 2f;
+        float elapsed = 0f;
+
+        // 2) Durante los primeros halfTime segundos, elevamos la cámara y damos media vuelta
+        while (elapsed < halfTime)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / halfTime; // de 0 a 1
+
+            // Calcular un ángulo de rotación: 0 → 180° sobre Y
+            float angle = Mathf.Lerp(0f, 180f, t);
+            float pitch = Mathf.Lerp(fixedPitch, fixedPitch + starCutsceneHeightOffset, t);
+            float radius = savedDistance + starCutsceneRadiusOffset;
+
+            // Posición de la cámara en coordenadas polares respecto a Mario
+            float rad = Mathf.Deg2Rad * (savedYaw + angle);
+            Vector3 offset = new Vector3(Mathf.Sin(rad), 0f, Mathf.Cos(rad)) * radius;
+            Vector3 pos = marioStart + offset;
+            pos.y = Mathf.Lerp(marioStart.y + lookAtHeight, marioStart.y + lookAtHeight + starCutsceneHeightOffset, t);
+
+            // Rotación: apuntar hacia Mario
+            Quaternion rot = Quaternion.LookRotation((marioStart + Vector3.up * lookAtHeight) - pos, Vector3.up);
+
+            cameraObject.transform.position = pos;
+            cameraObject.transform.rotation = rot;
+
+            yield return null;
+        }
+
+        // 3) Durante los segundos restantes (halfTime), volvemos a la posición original
+        float afterTime = 0f;
+        while (afterTime < halfTime)
+        {
+            afterTime += Time.deltaTime;
+            float t2 = afterTime / halfTime; // de 0 a 1
+
+            // Interpolamos de la posición actual → savedPosition
+            cameraObject.transform.position = Vector3.Lerp(cameraObject.transform.position, savedPosition, t2);
+            cameraObject.transform.rotation = Quaternion.Slerp(cameraObject.transform.rotation, savedRotation, t2);
+
+            yield return null;
+        }
+
+        // 4) Restaurar valores exactos
+        cameraObject.transform.position = savedPosition;
+        cameraObject.transform.rotation = savedRotation;
+        yaw = savedYaw;
+        cameraDistance = savedDistance;
+
+        inStarCutscene = false;
     }
 }

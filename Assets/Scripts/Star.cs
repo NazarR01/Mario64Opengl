@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LibSM64;
+
 public class Star : MonoBehaviour
 {
-  
     [Tooltip("ID de Mario en libsm64")]
     public uint marioId;
 
@@ -18,20 +18,30 @@ public class Star : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verificamos que la colisión sea con el objeto estrella
+        // Asegurarnos de que choca con Mario (tag “Player” o el que uses)
         if (!starGrabbed && other.CompareTag("Player"))
         {
-            starGrabbed = true; // para que no se repita la acción varias veces
+            starGrabbed = true; // para que no se repita la acción
 
             Debug.Log("Mario ha agarrado la estrella!");
 
-            // Llama a la función para activar la animación de agarrar estrella
+            // 1) Decirle a SM64 que ejecute la acción interna de “star dance”
             Interop.sm64_mario_set_cutscene_action((int)marioId, ACT_STAR_DANCE_EXIT, 0);
 
-            // Opcional: Desactiva o destruye la estrella
-            //other.gameObject.SetActive(false);
-            //Destroy(other.gameObject);
+            // 2) Buscar el componente CameraAndInput para lanzar la cutscene
+            var camScript = FindObjectOfType<CameraAndInput>();
+            if (camScript != null)
+            {
+                camScript.PlayStarCutscene();
+            }
+            else
+            {
+                Debug.LogWarning("[Star] No se encontró ningún CameraAndInput en la escena.");
+            }
+
+            // 3) Opcional: Desactivar o destruir la estrella en el mundo
+            //gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
 }
-
