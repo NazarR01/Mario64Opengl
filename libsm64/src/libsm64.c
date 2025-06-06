@@ -249,7 +249,38 @@ SM64_LIB_FN short sm64_mario_get_health(int marioId)
 
     return m->health;
 }
+SM64_LIB_FN void sm64_mario_set_action(int marioId, int action, int actionArg)
+{
+  
 
+    struct MarioState *m = gMarioState;
+
+    
+    if (m->action & ACT_FLAG_INTANGIBLE || m->action & ACT_FLAG_AIR || m->action & ACT_FLAG_INVULNERABLE)
+    {
+       
+        m->action = ACT_IDLE;
+        m->actionState = 0;
+        m->actionTimer = 0;
+        m->input = 0;
+        m->particleFlags = 0;
+        m->flags &= ~(MARIO_ACTION_SOUND_PLAYED | MARIO_UNKNOWN_18 | MARIO_UNKNOWN_13);
+
+       
+        stop_shell_music();
+    }
+
+    // Forzar nueva acción
+    set_mario_action(m, action, actionArg);
+}
+
+SM64_LIB_FN void sm64_mario_set_health(int marioId, short newHealth)
+{
+   struct MarioState *m = gMarioState;
+    if (!m) return;
+
+    m->health = newHealth;
+}
 SM64_LIB_FN void sm64_mario_tick( int32_t marioId, const struct SM64MarioInputs *inputs, struct SM64MarioState *outState, struct SM64MarioGeometryBuffers *outBuffers )
 {
     if( marioId >= s_mario_instance_pool.size || s_mario_instance_pool.objects[marioId] == NULL )

@@ -127,6 +127,10 @@ namespace LibSM64
         static extern void sm64_mario_tick( uint marioId, ref SM64MarioInputs inputs, ref SM64MarioState outState, ref SM64MarioGeometryBuffers outBuffers );
         [DllImport("sm64")]
         static extern void sm64_mario_delete( uint marioId );
+        [DllImport("sm64")]
+public static extern void sm64_mario_set_health(int marioId, short newHealth);
+[DllImport("sm64")]
+public static extern void sm64_mario_set_action(int marioId, int action, int actionArg);
 [DllImport("sm64")]
 private static extern short sm64_mario_get_health(int marioId);
 
