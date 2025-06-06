@@ -276,8 +276,10 @@ SM64_LIB_FN void sm64_mario_set_action(int marioId, int action, int actionArg)
 
 SM64_LIB_FN void sm64_mario_set_health(int marioId, short newHealth)
 {
-  
-    gMarioState->health = newHealth;
+   struct MarioState *m = gMarioState;
+    if (!m) return;
+
+    m->health = newHealth;
 }
 SM64_LIB_FN void sm64_mario_tick( int32_t marioId, const struct SM64MarioInputs *inputs, struct SM64MarioState *outState, struct SM64MarioGeometryBuffers *outBuffers )
 {
