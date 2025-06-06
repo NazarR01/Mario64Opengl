@@ -13,13 +13,13 @@ public class CameraAndInput : SM64InputProvider
     public float mouseSensitivity = 2.0f;
 
     [Tooltip("Pitch fijo en grados (ángulo de inclinación hacia abajo).")]
-    public float fixedPitch = 35f;
+    public float fixedPitch = 20f;
 
     private float yaw = 0f; // rotación acumulada en Y
 
     [Header("Zoom (ScrollWheel)")]
     [Tooltip("Distancia inicial de la cámara respecto a Mario.")]
-    public float cameraDistance = 5f;
+    public float cameraDistance = 10f;
 
     [Tooltip("Velocidad de zoom (ScrollWheel).")]
     public float zoomSpeed = 2f;
@@ -31,7 +31,7 @@ public class CameraAndInput : SM64InputProvider
     public float maxZoom = 10f;
 
     [Header("Offset vertical para LookAt")]
-    [Tooltip("Altura a la que la cámara mirará la cabeza de Mario.")]
+    [Tooltip("Altura a la que la cámara mirará la cabeza de Mario y desde donde se lanza el raycast.")]
     public float lookAtHeight = 1.5f;
 
     // --- Para el Star Cutscene ---
