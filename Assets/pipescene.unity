@@ -210,9 +210,9 @@ GameObject:
   m_Component:
   - component: {fileID: 137517261}
   - component: {fileID: 137517260}
-  - component: {fileID: 137517259}
   - component: {fileID: 137517263}
   - component: {fileID: 137517262}
+  - component: {fileID: 137517259}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -229,15 +229,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 137517258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01472004e2c74af46a45ebe0c7799fa8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d454740edb0c4a44ab15f24f8ac6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraObject: {fileID: 963194225}
   mouseSensitivity: 2
+  fixedPitch: 35
   cameraDistance: 5
   zoomSpeed: 2
   minZoom: 2
   maxZoom: 10
+  lookAtHeight: 1.5
 --- !u!114 &137517260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +384,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 435121260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e086dca89715754590bd4b69837d305, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f1412968a9eed14591f0154dea29621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 435121260}
@@ -576,11 +578,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 574805993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 998941e6222b01544925713ecbc73ac5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bc2948187fa9c84d9dbd48094d2b54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   marioId: 0
-  damageType: 2
+  damageType: 0
 --- !u!65 &574805995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -960,7 +962,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1042,22 +1043,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb85c1fb8105c545bfd23287a6c3495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 137517258}
-  radius: 10
-  elevation: 5
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c0db81bf6f3cce4ebc2b9877de28a7d, type: 3}
+  m_Script: {fileID: 11500000, guid: e8cb1aae147bdbf4fb42bcb3db467469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 435121260}
@@ -1747,7 +1733,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530470765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada72e6821c83974f89ef47c9be0c879, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cc5cb9d09e34d64b8af5dbdac7b811f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   marioId: 0
@@ -1955,7 +1941,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1673565481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1489181fcadd0284a9882b1f5b43c84d, type: 3}
+  m_Script: {fileID: 11500000, guid: d1362a10a38934c479d82bebd7b748e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mario: {fileID: 137517260}
