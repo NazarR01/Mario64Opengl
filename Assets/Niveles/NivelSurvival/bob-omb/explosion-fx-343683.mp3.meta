@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/bob-omb/explosion-fx-343683.mp3.meta
+guid: 47035cdbcde893d40b9462334fe67daa
+=======
 guid: bbd0d6ab62c0c8e499f72cd39c2ba08b
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/bob-omb/explosion-fx-343683.mp3.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6

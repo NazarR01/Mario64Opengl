@@ -354,6 +354,55 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f4a9101f467c7a149adff8b243ba1710, type: 2}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+--- !u!1 &109890308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109890310}
+  - component: {fileID: 109890309}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &109890309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109890308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1362a10a38934c479d82bebd7b748e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mario: {fileID: 0}
+  healthBar: {fileID: 378669706}
+  gameOverPanel: {fileID: 222280373}
+--- !u!4 &109890310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109890308}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 --- !u!1 &139470917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5514274132716633404, guid: ec48de8cff2434442923a3dca3dd8a0e,
@@ -438,7 +487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &180382419
 AudioSource:
   m_ObjectHideFlags: 0
@@ -549,6 +598,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+--- !u!1 &220053492
+=======
 --- !u!1 &203634095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7584400736022732644, guid: c3f3b5c906026d641858df27f5f73ee4,
@@ -584,6 +636,7 @@ MeshCollider:
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f00d0bc9a93f4ab41b4e8989bf58627d, type: 2}
 --- !u!1 &248112694
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1176,7 +1229,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_RootOrder: 9
+=======
   m_RootOrder: 8
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &648096797 stripped
 GameObject:
@@ -1212,6 +1269,82 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 25a0c2ebfcf565f42ac666dbbe3b781b, type: 2}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+--- !u!1 &721320459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721320460}
+  - component: {fileID: 721320462}
+  - component: {fileID: 721320461}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &721320460
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721320459}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 220053493}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &721320461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721320459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &721320462
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721320459}
+  m_CullTransparentMesh: 0
+=======
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 --- !u!1 &762081692 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3275908631013371658, guid: ec48de8cff2434442923a3dca3dd8a0e,
@@ -1275,19 +1408,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f938f4cb98e92fd44b27b960ac0872bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  bobombPrefab: {fileID: 0}
+  marioTransform: {fileID: 0}
+  referencePlane: {fileID: 0}
+  totalBombCount: 10
+  spawnInterval: 1
+=======
   bobombPrefab: {fileID: 852195371}
   marioTransform: {fileID: 1418342215}
   referencePlane: {fileID: 1410217883}
   totalBombCount: 10
   spawnInterval: 0
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   spawnHeightOffset: 5
   minSeparation: 2
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   postSpawnSurviveTime: 10
 --- !u!4 &783588367
 Transform:
@@ -1301,7 +1442,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_RootOrder: 8
+=======
   m_RootOrder: 7
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &851664493
 GameObject:
@@ -1359,14 +1504,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marioTransform: {fileID: 1418342215}
   explosionEffectPrefab: {fileID: 855549769}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  explosionAudioClip: {fileID: 0}
+  explosionAudioVolume: 1
+=======
   explosionAudioClip: {fileID: 8300000, guid: 361d82e8901272d4f80211e1e522e569, type: 3}
   explosionAudioVolume: 0.83
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   patrolSpeed: 2
   chaseSpeed: 4
   detectionRadius: 8
   explosionRadius: 1.2
   explosionDelay: 0.5
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  enablePatrol: 0
+=======
   enablePatrol: 1
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   patrolRadius: 5
   patrolInterval: 3
 --- !u!54 &852195373
@@ -1395,10 +1549,20 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1362a10a38934c479d82bebd7b748e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mario: {fileID: 1418342214}
+  healthBar: {fileID: 378669706}
+  gameOverPanel: {fileID: 222280373}
+=======
   m_Radius: 0.6134186
   m_Height: 1.2268372
   m_Direction: 1
   m_Center: {x: 0.09287262, y: -0.10064936, z: -0.030849457}
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 --- !u!1 &855549769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5643958320186289172, guid: 294834e66b9b7084e921f61add382d2b,
@@ -1501,6 +1665,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+=======
 --- !u!1 &872934349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,6 +1703,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 --- !u!1 &885263286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7321311628650675930, guid: ec48de8cff2434442923a3dca3dd8a0e,
@@ -2029,6 +2196,9 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 214405a5fd327414ead0ee8f0e1bb503, type: 2}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+--- !u!1 &1177167415
+=======
 --- !u!1 &1164107883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8658883050446308988, guid: c3f3b5c906026d641858df27f5f73ee4,
@@ -2064,6 +2234,7 @@ MeshCollider:
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b06fc8587b519e24b8c0bd92bb67974f, type: 2}
 --- !u!1 &1198159415
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2182,10 +2353,16 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+=======
   m_Children:
   - {fileID: 290583029}
   m_Father: {fileID: 27668524}
   m_RootOrder: 1
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2367,7 +2544,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_RootOrder: 5
+=======
   m_RootOrder: 6
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1247320425
 AudioListener:
@@ -2771,7 +2952,11 @@ Transform:
   m_LocalScale: {x: 16.8064, y: 15, z: 15.5961}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_RootOrder: 2
+=======
   m_RootOrder: 4
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418342209
 GameObject:
@@ -2872,7 +3057,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_RootOrder: 4
+=======
   m_RootOrder: 5
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1468455923 stripped
 GameObject:
@@ -2974,10 +3163,17 @@ RectTransform:
   m_Father: {fileID: 27668524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+=======
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -103, y: -49}
   m_SizeDelta: {x: 10, y: 10}
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543433208
 MonoBehaviour:
@@ -3083,7 +3279,139 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3f1d6d0c1d1c25948b222d85c524aebb, type: 2}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+--- !u!1 &1646528315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646528317}
+  - component: {fileID: 1646528316}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1646528316
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646528315}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1646528317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646528315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.344686, y: -167.57352, z: 233.52797}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1794746637}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1730383133
+=======
 --- !u!1001 &1651412142
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3133,6 +3461,13 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 804945cd01bfda740b7643de5d178f57,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+--- !u!1 &1740186219
+=======
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 804945cd01bfda740b7643de5d178f57,
@@ -3168,6 +3503,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 804945cd01bfda740b7643de5d178f57, type: 3}
 --- !u!1 &1685709717
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3184,7 +3520,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+--- !u!224 &1740186220
+=======
 --- !u!224 &1685709718
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3193,6 +3533,107 @@ RectTransform:
   m_GameObject: {fileID: 1685709717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 222280377}
+  - {fileID: 378669705}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1740186221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740186219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1740186222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740186219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1740186223
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740186219}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!1 &1794746636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794746637}
+  - component: {fileID: 1794746638}
+  m_Layer: 0
+  m_Name: explosion-fx-343683
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1794746637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794746636}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.344686, y: 167.57352, z: -233.52797}
+=======
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 248112695}
@@ -4396,7 +4837,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Nivel Plataforma.unity
+  m_RootOrder: 1
+=======
   m_RootOrder: 2
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Nivel Survival.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2032061138
 PrefabInstance:

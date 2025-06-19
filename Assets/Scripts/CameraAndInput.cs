@@ -4,6 +4,8 @@ using LibSM64;
 
 public class CameraAndInput : SM64InputProvider
 {
+    public bool cameraPaused = false;
+
     [Header("Referencia a la cámara")]
     [Tooltip("Arrastra aquí tu cámara principal (el GameObject que contiene Camera).")]
     public GameObject cameraObject;
@@ -62,6 +64,8 @@ public class CameraAndInput : SM64InputProvider
 
     void Update()
     {
+         if (cameraObject == null || inStarCutscene || cameraPaused)
+        return;
         if (cameraObject == null) return;
         if (inStarCutscene) return; // sin control normal durante la cinemática
 

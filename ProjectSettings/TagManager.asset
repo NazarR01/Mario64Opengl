@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Goomba
   - Boulder
+  - Mario
   layers:
   - Default
   - TransparentFX
