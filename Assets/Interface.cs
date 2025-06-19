@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using LibSM64;
 
-public class Cronometro : MonoBehaviour
+public class Interface : MonoBehaviour
 {
-    public float tiempoInicial = 120f; // Tiempo en segundos
+    public float tiempoInicial = 120f;
     private float tiempoRestante;
 
     public Text textoCronometro;
+    public Text textoMonedas; 
     public GameObject mario;
 
     private MarioCollisionDetector marioDetector;
-
     private bool tiempoAgotado = false;
 
     void Start()
@@ -30,27 +30,32 @@ public class Cronometro : MonoBehaviour
     {
         if (tiempoAgotado) return;
 
+        // Cronómetro
         tiempoRestante -= Time.deltaTime;
         tiempoRestante = Mathf.Max(0, tiempoRestante);
 
-        // Mostrar el tiempo en formato MM:SS
         if (textoCronometro != null)
         {
             int minutos = Mathf.FloorToInt(tiempoRestante / 60);
             int segundos = Mathf.FloorToInt(tiempoRestante % 60);
-            textoCronometro.text = Mathf.CeilToInt(tiempoRestante).ToString();
+            textoCronometro.text = $"Time: {segundos:00}";
         }
         else
         {
             Debug.LogWarning("TextoCronometro no está asignado en el Inspector.");
         }
 
+        // Mostrar monedas recogidas
+        if (textoMonedas != null)
+        {
+            textoMonedas.text = $"Coins: {Coin.GetCoinCount()}";
+        }
+
         // Matar a Mario si el tiempo llega a 0
         if (tiempoRestante <= 0 && marioDetector != null)
         {
             tiempoAgotado = true;
-            Interop.sm64_mario_set_health(0,0x0000);
-            //marioDetector.MatarInstantaneamente();
+            Interop.sm64_mario_set_health(0, 0x0000);
         }
     }
 }
