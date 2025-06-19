@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: 47035cdbcde893d40b9462334fe67daa
+<<<<<<< HEAD:Assets/Niveles/NivelPlataforma/Audio/explosion.mp3.meta
+guid: edf4c9e15cd87c74eac31e723c4783c5
+=======
+guid: 361d82e8901272d4f80211e1e522e569
+>>>>>>> 01d7ceae572d3e71937e15c894f83b0127174555:Assets/Niveles/NivelSurvival/Audio/explosion.mp3.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
   defaultSettings:
     loadType: 0
-    sampleRateSetting: 0
+    sampleRateSetting: 1
     sampleRateOverride: 44100
     compressionFormat: 1
     quality: 1
@@ -13,7 +17,7 @@ AudioImporter:
   platformSettingOverrides: {}
   forceToMono: 0
   normalize: 1
-  preloadAudioData: 1
+  preloadAudioData: 0
   loadInBackground: 0
   ambisonic: 0
   3D: 1
