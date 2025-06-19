@@ -1,4 +1,5 @@
 using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using LibSM64;
 public class Interface : MonoBehaviour
 {
    public float tiempoInicial = 120f;
+
     private float tiempoRestante;
 
     public Text textoCronometro;
@@ -58,4 +60,3 @@ public class Interface : MonoBehaviour
         }
     }
 }
-
