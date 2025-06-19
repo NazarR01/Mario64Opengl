@@ -1,0 +1,8 @@
+Model Information:
+* title:	Goomba
+* source:	https://sketchfab.com/3d-models/goomba-78cb4717fef74e9ca73e7f71b8f572cf
+* author:	vulpin (https://sketchfab.com/arcticplains00)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

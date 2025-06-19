@@ -10,7 +10,7 @@ public class Interface : MonoBehaviour
     private float tiempoRestante;
 
     public Text textoCronometro;
-    public Text textoMonedas; 
+    public Text textoMonedas;
     public GameObject mario;
 
     private MarioCollisionDetector marioDetector;
@@ -36,8 +36,7 @@ public class Interface : MonoBehaviour
 
         if (textoCronometro != null)
         {
-            int minutos = Mathf.FloorToInt(tiempoRestante / 60);
-            int segundos = Mathf.FloorToInt(tiempoRestante % 60);
+            int segundos = Mathf.CeilToInt(tiempoRestante);
             textoCronometro.text = $"Time: {segundos:00}";
         }
         else
