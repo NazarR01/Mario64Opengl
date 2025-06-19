@@ -127,13 +127,29 @@ namespace LibSM64
         static extern void sm64_mario_tick( uint marioId, ref SM64MarioInputs inputs, ref SM64MarioState outState, ref SM64MarioGeometryBuffers outBuffers );
         [DllImport("sm64")]
         static extern void sm64_mario_delete( uint marioId );
+        [DllImport("sm64")]
+public static extern void sm64_mario_set_health(int marioId, short newHealth);
+[DllImport("sm64")]
+public static extern void sm64_mario_set_action(int marioId, int action, int actionArg);
+[DllImport("sm64")]
+private static extern short sm64_mario_get_health(int marioId);
+
+public static int MarioGetHealth(uint marioId)
+{
+    return sm64_mario_get_health((int)marioId);
+}
 
         [DllImport("sm64")]
         static extern uint sm64_surface_object_create( ref SM64SurfaceObject surfaceObject );
+[DllImport("sm64")]
+public static extern void sm64_mario_apply_damage(int marioId, int damageType);
+
         [DllImport("sm64")]
         static extern void sm64_surface_object_move( uint objectId, ref SM64ObjectTransform transform );
         [DllImport("sm64")]
         static extern void sm64_surface_object_delete( uint objectId );
+	[DllImport("sm64")]
+public static extern void sm64_mario_set_cutscene_action(int marioId, int action, int actionArg);
 
         [DllImport("sm64")]
         static extern void sm64_mario_trigger_death(uint marioId, int cutscene);
