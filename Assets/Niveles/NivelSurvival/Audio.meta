@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Canvas.prefab.meta
-guid: bd85f166d5515b445a7008a3f683eafe
+guid: 3de51f88d24a8d94abd3d2f3beacac1a
+
 PrefabImporter:
-========
-guid: dc2dd2d04b2a8c64fa17fcca20eb4461
+
 folderAsset: yes
 DefaultImporter:
->>>>>>>> e04b2eaf676a45b99ef46faeb3978004674841b6:Assets/Niveles/NivelPlataforma/Audio.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

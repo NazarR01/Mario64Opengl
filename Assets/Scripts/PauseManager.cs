@@ -9,6 +9,10 @@ public class PauseManager : MonoBehaviour
     public RectTransform cursorDot;             // Punto como cursor
     public Vector2 offset = new Vector2(-60f, -5f); // Posición relativa del cursor
 
+     public AudioClip pauseAudioClip;
+    [Range(0f,1f)] public float pauseAudioVolume = 1f;
+
+
     private CameraAndInput cameraControl;
     private int selectedIndex = 0;
     private bool isPaused = false;
@@ -68,6 +72,9 @@ public class PauseManager : MonoBehaviour
         pauseMenuPanel.SetActive(true);
         selectedIndex = 0;
         MoveCursorToSelected();
+        if (pauseAudioClip != null)
+            AudioSource.PlayClipAtPoint(pauseAudioClip, transform.position, pauseAudioVolume);
+
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -75,6 +82,8 @@ public class PauseManager : MonoBehaviour
         if (cameraControl != null)
             cameraControl.cameraPaused = true;
     }
+
+
 
     public void ResumeGame()
     {
