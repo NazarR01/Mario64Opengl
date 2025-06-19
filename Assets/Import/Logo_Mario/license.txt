@@ -1,0 +1,11 @@
+Model Information:
+* title:	Logo Mario
+* source:	https://sketchfab.com/3d-models/logo-mario-d1c1885ab34b4a59bd31bd1c46f14b69
+* author:	RickyManiac (https://sketchfab.com/RickyManiac)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Logo Mario" (https://sketchfab.com/3d-models/logo-mario-d1c1885ab34b4a59bd31bd1c46f14b69) by RickyManiac (https://sketchfab.com/RickyManiac) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

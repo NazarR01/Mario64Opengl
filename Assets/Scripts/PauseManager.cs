@@ -5,16 +5,24 @@ using UnityEngine.UI;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
-    public RectTransform cursor;
-    public Button[] buttons;
+    public RectTransform[] menuOptions;         // Opciones de menú (botones)
+    public RectTransform cursorDot;             // Punto como cursor
+    public Vector2 offset = new Vector2(-60f, -5f); // Posición relativa del cursor
 
+    private CameraAndInput cameraControl;
     private int selectedIndex = 0;
     private bool isPaused = false;
+    private float moveDelay = 0.2f;
+    private float lastMoveTime = 0f;
 
     void Start()
     {
         pauseMenuPanel.SetActive(false);
         MoveCursorToSelected();
+
+        cameraControl = FindObjectOfType<CameraAndInput>();
+        if (cameraControl == null)
+            Debug.LogWarning("No se encontró el script CameraAndInput en la escena.");
     }
 
     void Update()
@@ -23,60 +31,70 @@ public class PauseManager : MonoBehaviour
         {
             if (isPaused)
                 ResumeGame();
-            else 
+            else
                 PauseGame();
-             
-
         }
 
         if (!isPaused) return;
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Time.unscaledTime - lastMoveTime > moveDelay)
         {
-            selectedIndex = (selectedIndex - 1 + buttons.Length) % buttons.Length;
-            MoveCursorToSelected();
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                selectedIndex = (selectedIndex - 1 + menuOptions.Length) % menuOptions.Length;
+                MoveCursorToSelected();
+                lastMoveTime = Time.unscaledTime;
+            }
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                selectedIndex = (selectedIndex + 1) % menuOptions.Length;
+                MoveCursorToSelected();
+                lastMoveTime = Time.unscaledTime;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
-            selectedIndex = (selectedIndex + 1) % buttons.Length;
-            MoveCursorToSelected();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            buttons[selectedIndex].onClick.Invoke();
+            Button btn = menuOptions[selectedIndex].GetComponent<Button>();
+            if (btn != null)
+                btn.onClick.Invoke();
         }
     }
 
-  void PauseGame()
-{
-    isPaused = true;
-    Time.timeScale = 0f;
-    pauseMenuPanel.SetActive(true);
-    selectedIndex = 0;
-    MoveCursorToSelected();
+    void PauseGame()
+    {
+        isPaused = true;
+        Time.timeScale = 0f;
+        pauseMenuPanel.SetActive(true);
+        selectedIndex = 0;
+        MoveCursorToSelected();
 
-    Cursor.visible = true;
-    Cursor.lockState = CursorLockMode.None;
-}
-void ResumeGame()
-{
-    isPaused = false;
-    Time.timeScale = 1f;
-    pauseMenuPanel.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
-    Cursor.visible = false;
-    Cursor.lockState = CursorLockMode.Locked;
-}
+        if (cameraControl != null)
+            cameraControl.cameraPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+        pauseMenuPanel.SetActive(false);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        if (cameraControl != null)
+            cameraControl.cameraPaused = false;
+    }
+
     void MoveCursorToSelected()
     {
-        if (cursor != null && buttons[selectedIndex] != null)
+        if (cursorDot != null && selectedIndex < menuOptions.Length)
         {
-            RectTransform buttonTransform = buttons[selectedIndex].GetComponent<RectTransform>();
-            Vector3 newPos = buttonTransform.position;
-            newPos.x -= 30f; 
-            cursor.position = newPos;
+            RectTransform selected = menuOptions[selectedIndex];
+            cursorDot.position = selected.position + (Vector3)offset;
         }
     }
 
