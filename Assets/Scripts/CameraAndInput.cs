@@ -31,8 +31,8 @@ public class CameraAndInput : SM64InputProvider
     public float maxZoom = 10f;
 
     [Header("Offset vertical para LookAt")]
-    [Tooltip("Altura a la que la cámara mirará la cabeza de Mario y desde donde se lanza el raycast.")]
-    public float lookAtHeight = 1.5f;
+    [Tooltip("Altura a la que la cámara mirará la cabeza de Mario.")]
+    public float lookAtHeight = 7.5f;
 
     // --- Para el Star Cutscene ---
     private bool inStarCutscene = false;
