@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bob Omb Battlefield Oddysey Mod Model
+* source:	https://sketchfab.com/3d-models/bob-omb-battlefield-oddysey-mod-model-0699fcbb3e264a48ae7f466d8a5dcc90
+* author:	Skelenius507 (https://sketchfab.com/elpocho.voitier)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bob Omb Battlefield Oddysey Mod Model" (https://sketchfab.com/3d-models/bob-omb-battlefield-oddysey-mod-model-0699fcbb3e264a48ae7f466d8a5dcc90) by Skelenius507 (https://sketchfab.com/elpocho.voitier) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

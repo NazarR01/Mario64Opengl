@@ -36,7 +36,6 @@ public class Bobomb : MonoBehaviour
 
     private enum State { Patrol, Chase, Exploding }
     private State currentState = State.Patrol;
-
     private Vector3 patrolTarget;
     private float patrolTimer = 0f;
 
@@ -44,7 +43,6 @@ public class Bobomb : MonoBehaviour
     private Collider col;
     private Renderer[] renderers;
     private bool isExploding = false;
-
 
     void Awake()
     {
@@ -58,12 +56,10 @@ public class Bobomb : MonoBehaviour
         // Reemplazar MeshCollider no-convex si existe
         if (col is MeshCollider mc && !mc.convex)
         {
-
             DestroyImmediate(mc);
             var sc = gameObject.AddComponent<SphereCollider>();
             sc.radius = 0.5f;
         }
-
     }
 
     void Start()
@@ -75,7 +71,6 @@ public class Bobomb : MonoBehaviour
             ChooseNewPatrolTarget();
         else
             currentState = State.Chase;
-
     }
 
     void Update()
@@ -86,7 +81,6 @@ public class Bobomb : MonoBehaviour
 
         if (currentState != State.Chase && distToMario <= detectionRadius)
             currentState = State.Chase;
-
         else if (currentState == State.Chase && distToMario > detectionRadius && enablePatrol)
         {
             currentState = State.Patrol;
@@ -97,14 +91,12 @@ public class Bobomb : MonoBehaviour
         {
             case State.Patrol: PatrolBehavior(); break;
             case State.Chase:  ChaseBehavior(distToMario); break;
-
         }
     }
 
     private void PatrolBehavior()
     {
         patrolTimer += Time.deltaTime;
-
         Vector3 currXZ = new Vector3(transform.position.x, 0f, transform.position.z);
         Vector3 targXZ = new Vector3(patrolTarget.x, 0f, patrolTarget.z);
 
@@ -123,7 +115,6 @@ public class Bobomb : MonoBehaviour
             StartCoroutine(Explode());
         else
             MoveTowards(marioTransform.position, chaseSpeed);
-
     }
 
     private void MoveTowards(Vector3 target, float speed)
@@ -138,14 +129,12 @@ public class Bobomb : MonoBehaviour
             Vector3 desiredForward = -dir;
             transform.forward = Vector3.Slerp(transform.forward, desiredForward, Time.deltaTime * 10f);
 
-
             Vector3 vel = dir * speed;
             vel.y = rb.velocity.y;
             rb.velocity = vel;
         }
         else
         {
-
             rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
         }
     }
@@ -157,7 +146,6 @@ public class Bobomb : MonoBehaviour
 
         if (Physics.Raycast(candidate + Vector3.up * 5f, Vector3.down, out RaycastHit hit, 10f))
             candidate.y = hit.point.y + 0.05f;
-
 
         patrolTarget = candidate;
     }
@@ -194,7 +182,6 @@ public class Bobomb : MonoBehaviour
 
         yield return new WaitForSeconds(explosionDelay);
 
-
         Destroy(gameObject);
     }
 
@@ -204,7 +191,6 @@ public class Bobomb : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
-
         if (enablePatrol)
         {
             Gizmos.color = Color.yellow;
