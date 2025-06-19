@@ -33,4 +33,10 @@ public class Coin : MonoBehaviour
             Destroy(gameObject); // eliminar la moneda recogida
         }
     }
+
+    public static int GetCoinCount()
+    {
+    return coinCount;
+    }
+
 }
