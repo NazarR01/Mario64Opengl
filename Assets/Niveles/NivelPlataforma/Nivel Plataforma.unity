@@ -2508,7 +2508,6 @@ MeshCollider:
   m_Mesh: {fileID: 4300000, guid: 3f1d6d0c1d1c25948b222d85c524aebb, type: 2}
 --- !u!1001 &1730383133
 PrefabInstance:
-=======
 --- !u!1 &1646528315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,9 +3129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GAME OVER
-
-'
+  m_Text: 'GAME OVER'
 --- !u!222 &1970529488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3209,9 +3206,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quit
+  m_Text: 'Quit'
 
-'
 --- !u!222 &2013143179
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3485,4 +3481,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294834e66b9b7084e921f61add382d2b, type: 3}
-
