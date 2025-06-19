@@ -8,6 +8,9 @@ public class PauseManager : MonoBehaviour
     public RectTransform cursor;
     public Button[] buttons;
 
+     public AudioClip pauseAudioClip;
+    [Range(0f,1f)] public float pauseAudioVolume = 1f;
+
     private int selectedIndex = 0;
     private bool isPaused = false;
 
@@ -56,6 +59,9 @@ public class PauseManager : MonoBehaviour
     pauseMenuPanel.SetActive(true);
     selectedIndex = 0;
     MoveCursorToSelected();
+     if (pauseAudioClip != null)
+            AudioSource.PlayClipAtPoint(pauseAudioClip, transform.position, pauseAudioVolume);
+
 
     Cursor.visible = true;
     Cursor.lockState = CursorLockMode.None;

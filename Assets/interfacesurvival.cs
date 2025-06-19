@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using LibSM64;
 
-public class Interface : MonoBehaviour
+public class interfacesurvival : MonoBehaviour
 {
-   public float tiempoInicial = 120f;
+    public float tiempoInicial = 120f;
     private float tiempoRestante;
 
     public Text textoCronometro;
@@ -20,10 +20,7 @@ public class Interface : MonoBehaviour
     {
         tiempoRestante = tiempoInicial;
 
-        if (mario != null)
-            marioDetector = mario.GetComponent<MarioCollisionDetector>();
-        else
-            Debug.LogWarning("Mario no está asignado en el Inspector.");
+    
     }
 
     void Update()
@@ -51,10 +48,16 @@ public class Interface : MonoBehaviour
         }
 
         // Matar a Mario si el tiempo llega a 0
-        if (tiempoRestante <= 0 && marioDetector != null)
+        if (tiempoRestante <= 0)
         {
             tiempoAgotado = true;
-            Interop.sm64_mario_set_health(0, 0x0000);
+            //aqui se agregara pantalla de victoria
+            
+
+
+
+
+        
         }
     }
 }
