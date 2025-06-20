@@ -211,7 +211,7 @@ public class Goomba : MonoBehaviour
             AudioSource.PlayClipAtPoint(stompAudioClip, transform.position, stompAudioVolume);
 
         Vector3 originalScale = transform.localScale;
-        Vector3 squashedScale = new Vector3(originalScale.x, 0.2f, originalScale.z);
+        Vector3 squashedScale = new Vector3(originalScale.x, 0.1f, originalScale.z);
 
         float t = 0f;
         while (t < squashDuration)
