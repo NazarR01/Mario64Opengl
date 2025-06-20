@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LibSM64;
+using UnityEngine.SceneManagement;
+
 
 public class InterfaceLava : MonoBehaviour
 {
@@ -51,12 +53,15 @@ public class InterfaceLava : MonoBehaviour
         {
             textoMonedas.text = $"Coins: {CoinLava.GetCoinCount()}";
         }
+        
 
         // Matar a Mario si el tiempo llega a 0
         if (tiempoRestante <= 0 && marioDetector != null)
         {
             tiempoAgotado = true;
             Interop.sm64_mario_set_health(0, 0x0000);
+             CoinLava.ResetCoinCount(); // resetea el contador
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //  REINICIAR LA ESCENA
         }
     }
 }

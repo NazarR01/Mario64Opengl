@@ -49,8 +49,10 @@ public class Interface : MonoBehaviour
         // Mostrar monedas recogidas
         if (textoMonedas != null)
         {
-            textoMonedas.text = $"Coins: {Coin.GetCoinCount()}";
+            textoMonedas.text = $"Coins: {CoinLava.GetCoinCount()}";
         }
+
+      
 
         // Matar a Mario si el tiempo llega a 0
         if (tiempoRestante <= 0 && marioDetector != null)
