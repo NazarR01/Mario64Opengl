@@ -14,12 +14,16 @@ public class Star : MonoBehaviour
     public Transform marioTransform;         // Mario para posicionar la cámara
     public GameObject fadePanel;             // Panel negro para fade
     public Camera mainCamera;                // Cámara principal (opcional si ya está asignada)
-    public float cameraDistance = 3f;
+    public float cameraDistance = 5.5f;
     public float cameraHeight = 2f;
     public float delayBeforeReturn = 3f;
     public float fadeDuration = 2f;
-
+    [SerializeField] private GameObject Heart;
+    [SerializeField] private GameObject monedas;
+    [SerializeField] private GameObject textotimer;
+    
     private bool starGrabbed = false;
+    public bool StarGrabbed => starGrabbed;
     private const int ACT_STAR_DANCE_EXIT = 0x00001302;
     private Camera victoryCamera;
 
@@ -30,6 +34,7 @@ public class Star : MonoBehaviour
 
         if (fadePanel != null)
             fadePanel.SetActive(false);
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +42,9 @@ public class Star : MonoBehaviour
         if (!starGrabbed && other.CompareTag("Player"))
         {
             starGrabbed = true;
-
+            if (Heart != null) Heart.SetActive(false);
+if (monedas != null) monedas.SetActive(false);
+if (textotimer != null) textotimer.SetActive(false);
             Debug.Log("Mario ha agarrado la estrella!");
 
             Interop.sm64_mario_set_cutscene_action((int)marioId, ACT_STAR_DANCE_EXIT, 0);
@@ -58,30 +65,6 @@ public class Star : MonoBehaviour
             StartCoroutine(ReturnToMenuAfterDelay());
         }
     }
-public void TriggerVictory()
-{
-    if (starGrabbed) return;
-    starGrabbed = true;
-
-    Debug.Log("Victoria manual activada");
-
-    Interop.sm64_mario_set_cutscene_action((int)marioId, ACT_STAR_DANCE_EXIT, 0);
-
-    var camScript = FindObjectOfType<CameraAndInput>();
-    if (camScript != null)
-        camScript.cameraPaused = true;
-
-    if (mainCamera != null)
-        mainCamera.gameObject.SetActive(false);
-
-    CreateVictoryCamera();
-    PositionVictoryCamera();
-
-    if (winPanel != null)
-        winPanel.SetActive(true);
-
-    StartCoroutine(ReturnToMenuAfterDelay());
-}//llamar asi en el otro script   starScript?.TriggerVictory();
 
     void CreateVictoryCamera()
     {
@@ -102,18 +85,38 @@ public void TriggerVictory()
         }
     }
 
-    void PositionVictoryCamera()
-    {
-        if (marioTransform == null || victoryCamera == null) return;
+  void PositionVictoryCamera()
+{
+    if (marioTransform == null || victoryCamera == null || mainCamera == null) return;
 
-        Vector3 marioPos = marioTransform.position;
-        Vector3 marioForward = marioTransform.forward;
+    Vector3 marioPos = marioTransform.position;
 
-        // Mirar a Mario desde el frente
-        Vector3 cameraPos = marioPos - marioForward * cameraDistance + Vector3.up * cameraHeight;
-        victoryCamera.transform.position = cameraPos;
-        victoryCamera.transform.LookAt(marioPos + Vector3.up * 1f);
-    }
+    // Obtener dirección desde cámara principal hacia Mario
+  
+
+    // Evitar que la cámara quede por debajo del terreno
+    float minHeight = marioPos.y + 1.3f; // Al menos medio metro sobre el suelo de Mario
+
+
+   float minDistance = 3.0f;
+Vector3 toMario = marioTransform.forward;
+Vector3 desiredPos = marioTransform.position + toMario * cameraDistance + Vector3.up * cameraHeight;
+
+Vector3 direction = (desiredPos - marioTransform.position).normalized;
+float actualDistance = Vector3.Distance(desiredPos, marioTransform.position);
+
+// Si está muy cerca, empújala hacia atrás
+if (actualDistance < minDistance)
+{
+    desiredPos = marioTransform.position + direction * minDistance + Vector3.up * cameraHeight;
+}
+
+desiredPos.y = Mathf.Max(desiredPos.y, minHeight);
+victoryCamera.transform.position = desiredPos;
+victoryCamera.transform.LookAt(marioTransform.position + Vector3.up * 1f);
+
+}
+
 
     IEnumerator ReturnToMenuAfterDelay()
     {

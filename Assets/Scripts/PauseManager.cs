@@ -13,12 +13,17 @@ public class PauseManager : MonoBehaviour
     [Range(0f,1f)] public float pauseAudioVolume = 1f;
 
 
+
     private CameraAndInput cameraControl;
     private int selectedIndex = 0;
     private bool isPaused = false;
     private float moveDelay = 0.2f;
     private float lastMoveTime = 0f;
-
+    [SerializeField] private Gameover gameoverScript;
+     [SerializeField] private Star Starscript;
+    [SerializeField] private GameObject Heart;
+[SerializeField] private GameObject monedas;
+[SerializeField] private GameObject textotimer;
     void Start()
     {
         pauseMenuPanel.SetActive(false);
@@ -31,6 +36,10 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
+           if (gameoverScript != null && gameoverScript.IsGameOver)
+        return;
+          if (Starscript.StarGrabbed) return; // Si ganaste, no permitas pausar
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -67,10 +76,14 @@ public class PauseManager : MonoBehaviour
 
     void PauseGame()
     {
+
         isPaused = true;
         Time.timeScale = 0f;
         pauseMenuPanel.SetActive(true);
         selectedIndex = 0;
+        if (Heart != null) Heart.SetActive(false);
+        if (monedas != null) monedas.SetActive(false);
+        if (textotimer != null) textotimer.SetActive(false);
         MoveCursorToSelected();
         if (pauseAudioClip != null)
             AudioSource.PlayClipAtPoint(pauseAudioClip, transform.position, pauseAudioVolume);
@@ -90,6 +103,11 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f;
         pauseMenuPanel.SetActive(false);
+
+
+    if (Heart != null) Heart.SetActive(true);
+    if (monedas != null) monedas.SetActive(true);
+    if (textotimer != null) textotimer.SetActive(true);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

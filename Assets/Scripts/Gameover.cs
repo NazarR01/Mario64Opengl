@@ -16,8 +16,13 @@ public class Gameover : MonoBehaviour
     private CameraAndInput cameraControl;
     private int currentIndex = 0;
     private bool isGameOver = false;
+    public bool IsGameOver => isGameOver;
+
     private float moveDelay = 0.2f;
     private float lastMoveTime = 0f;
+    [SerializeField] private GameObject Heart;
+    [SerializeField] private GameObject monedas;
+    [SerializeField] private GameObject textotimer;
 
     void Start()
     {
@@ -31,7 +36,9 @@ public class Gameover : MonoBehaviour
 
         if (isGameOver) return;
         isGameOver = true;
-
+         if (Heart != null) Heart.SetActive(false);
+        if (monedas != null) monedas.SetActive(false);
+        if (textotimer != null) textotimer.SetActive(false);
         panel.SetActive(true); // Mostrar panel inmediatamente
 
         if (cameraControl != null)
