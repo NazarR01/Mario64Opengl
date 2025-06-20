@@ -644,7 +644,7 @@ PrefabInstance:
     - target: {fileID: 8980890960106599256, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: tiempoInicial
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ab3808a6d63f04caf744d6658bb046, type: 3}
@@ -5060,7 +5060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1457447442
 PrefabInstance:

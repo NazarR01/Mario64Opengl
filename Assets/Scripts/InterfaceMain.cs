@@ -19,6 +19,7 @@ public class InterfaceMain : MonoBehaviour
 
     void Start()
     {
+        Coin.ResetCoinCount(); // 🔁 Reinicia monedas al cargar la escena
         tiempoRestante = tiempoInicial;
 
         if (mario != null)
@@ -34,6 +35,7 @@ public class InterfaceMain : MonoBehaviour
     {
         if (tiempoAgotado) return;
 
+        // Cronómetro
         tiempoRestante -= Time.deltaTime;
         tiempoRestante = Mathf.Max(0, tiempoRestante);
 
@@ -47,18 +49,20 @@ public class InterfaceMain : MonoBehaviour
             Debug.LogWarning("❗ textoCronometro no está asignado.");
         }
 
+        // Mostrar monedas recogidas
         if (textoMonedas != null)
         {
-            textoMonedas.text = $"Coins: {CoinLava.GetCoinCount()}";
+            textoMonedas.text = $"Coins: {Coin.GetCoinCount()}";
         }
 
+        // Matar a Mario si el tiempo llega a 0
         if (tiempoRestante <= 0 && !tiempoAgotado)
         {
             tiempoAgotado = true;
 
             if (marioHealt != null)
             {
-                marioHealt.SetHealthZero(); // Mata a Mario y muestra Game Over
+                marioHealt.SetHealthZero(); // ✅ Matar a Mario
                 Debug.Log("💀 Tiempo agotado. Salud de Mario forzada a 0.");
             }
             else
@@ -66,5 +70,12 @@ public class InterfaceMain : MonoBehaviour
                 Debug.LogWarning("❗ No se pudo matar a Mario: referencia a MarioHealt faltante.");
             }
         }
+    }
+
+    // 🔁 Permite reiniciar el cronómetro desde Game Over si se desea
+    public void ResetTimer()
+    {
+        tiempoRestante = tiempoInicial;
+        tiempoAgotado = false;
     }
 }
