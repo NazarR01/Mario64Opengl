@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Niveles/UI/MainMenu.unity
     guid: 9fad2e7acd532ad449d4a35371bffdb7
+  - enabled: 1
+    path: Assets/Niveles/UI/LvlSelect.unity
+    guid: 8526f3a027549334282579954b9a06b7
+  - enabled: 1
+    path: Assets/Niveles/NivelRAUL/Lava Land.unity
+    guid: 817215cafe9defb43987676640c803d6
   m_configObjects: {}

@@ -12,7 +12,7 @@ public class InterfaceLava : MonoBehaviour
    public float tiempoInicial = 120f;
     private float tiempoRestante;
 
-    public Text textoCronometro;
+    
     public Text textoMonedas;
     public GameObject mario;
 
@@ -32,21 +32,7 @@ public class InterfaceLava : MonoBehaviour
 
     void Update()
     {
-        if (tiempoAgotado) return;
-
-        // Cronómetro
-        tiempoRestante -= Time.deltaTime;
-        tiempoRestante = Mathf.Max(0, tiempoRestante);
-
-        if (textoCronometro != null)
-        {
-            int segundos = Mathf.CeilToInt(tiempoRestante);
-            textoCronometro.text = $"Time: {segundos:00}";
-        }
-        else
-        {
-            Debug.LogWarning("TextoCronometro no está asignado en el Inspector.");
-        }
+    
 
         // Mostrar monedas recogidas
         if (textoMonedas != null)

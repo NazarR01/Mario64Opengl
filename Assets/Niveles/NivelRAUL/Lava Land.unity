@@ -1870,7 +1870,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoInicial: 0
-  textoCronometro: {fileID: 0}
   textoMonedas: {fileID: 871642072}
   mario: {fileID: 1750007079}
 --- !u!1 &703869616 stripped
@@ -6243,9 +6242,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1969107875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee83ef642c5dbf4b8f2d65c7e851f09, type: 3}
+  m_Script: {fileID: 11500000, guid: b64918658ee2843438a1fef3af353ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amplitudMovimiento: 1.5
+  velocidad: 1
 --- !u!1001 &1988717415
 PrefabInstance:
   m_ObjectHideFlags: 0

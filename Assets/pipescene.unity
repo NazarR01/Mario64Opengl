@@ -812,6 +812,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5926667563396275336, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: Starscript
+      value: 
+      objectReference: {fileID: 1530470766}
     - target: {fileID: 5926667563822671214, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_IsActive
@@ -1027,6 +1032,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -340
       objectReference: {fileID: 0}
+    - target: {fileID: 8980890960106599256, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: mario
+      value: 
+      objectReference: {fileID: 137517258}
+    - target: {fileID: 8980890960106599256, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: marioHealt
+      value: 
+      objectReference: {fileID: 931802008}
     - target: {fileID: 9119072103722029973, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1045,6 +1060,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &931802008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5926667564994599977, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 757304928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1362a10a38934c479d82bebd7b748e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &963194225
