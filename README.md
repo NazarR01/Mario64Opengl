@@ -38,7 +38,7 @@ This is a fun fan-made version of the classic Mario 64 game, built using the **U
 1. Download the latest version from the **Releases** section on GitHub.
 2. Unzip the folder (right-click → Extract All).
 3. Open the folder.
-4. Double-click on `SuperMario64.exe` to play.
+4. Double-click on `libsm64-unity-dev.exe` to play.
 
 ---
 
@@ -59,9 +59,8 @@ This is a fun fan-made version of the classic Mario 64 game, built using the **U
 2. Inside Unity Hub, install Unity (version 2019.3.10f1 or newer).
 3. Clone this repo:
 
-   ```bash
+  
    git clone https://github.com/NazarR01/Mario64Opengl.git
-````
 
 4. Open the project in Unity:
 
@@ -91,6 +90,5 @@ You don't need to install anything complicated—just unzip and play.
 
 Have fun jumping into a 3D adventure! 🍄✨
 
-```
 
 ---
