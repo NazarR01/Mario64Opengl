@@ -5,15 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using LibSM64;
 
-public class Interface : MonoBehaviour
+public class InterfaceMain : MonoBehaviour
 {
-   public float tiempoInicial = 120f;
-
+    public float tiempoInicial = 120f;
     private float tiempoRestante;
 
     public Text textoCronometro;
     public Text textoMonedas;
     public GameObject mario;
+    public MarioHealt marioHealt;
 
     private MarioCollisionDetector marioDetector;
     private bool tiempoAgotado = false;
@@ -25,14 +25,16 @@ public class Interface : MonoBehaviour
         if (mario != null)
             marioDetector = mario.GetComponent<MarioCollisionDetector>();
         else
-            Debug.LogWarning("Mario no está asignado en el Inspector.");
+            Debug.LogWarning("❗ Mario no está asignado en el Inspector.");
+
+        if (marioHealt == null)
+            Debug.LogWarning("❗ MarioHealt no está asignado en el Inspector.");
     }
 
     void Update()
     {
         if (tiempoAgotado) return;
 
-        // Cronómetro
         tiempoRestante -= Time.deltaTime;
         tiempoRestante = Mathf.Max(0, tiempoRestante);
 
@@ -43,22 +45,27 @@ public class Interface : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("TextoCronometro no está asignado en el Inspector.");
+            Debug.LogWarning("❗ textoCronometro no está asignado.");
         }
 
-        // Mostrar monedas recogidas
         if (textoMonedas != null)
         {
             textoMonedas.text = $"Coins: {CoinLava.GetCoinCount()}";
         }
 
-      
-
-        // Matar a Mario si el tiempo llega a 0
-        if (tiempoRestante <= 0 && marioDetector != null)
+        if (tiempoRestante <= 0 && !tiempoAgotado)
         {
             tiempoAgotado = true;
-            Interop.sm64_mario_set_health(0, 0x0000);
+
+            if (marioHealt != null)
+            {
+                marioHealt.SetHealthZero(); // Mata a Mario y muestra Game Over
+                Debug.Log("💀 Tiempo agotado. Salud de Mario forzada a 0.");
+            }
+            else
+            {
+                Debug.LogWarning("❗ No se pudo matar a Mario: referencia a MarioHealt faltante.");
+            }
         }
     }
 }
