@@ -139,7 +139,7 @@ victoryCamera.transform.LookAt(marioTransform.position + Vector3.up * 1f);
 
             fadeImage.color = new Color(color.r, color.g, color.b, 1f);
         }
-
+         Interop.MarioDelete(0);
         SceneManager.LoadScene("MainMenu");
     }
 }
