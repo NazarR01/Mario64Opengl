@@ -530,18 +530,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &226390628 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9119072102830137736, guid: 42ab3808a6d63f04caf744d6658bb046,
-    type: 3}
-  m_PrefabInstance: {fileID: 404389552}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &228696664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,21 +1162,20 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 8980890960106599256, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: tiempoInicial
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980890960106599256, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: textoCronometro
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2314933673952932761, guid: 42ab3808a6d63f04caf744d6658bb046, type: 3}
+    - {fileID: 8980890960106599256, guid: 42ab3808a6d63f04caf744d6658bb046, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 42ab3808a6d63f04caf744d6658bb046, type: 3}
---- !u!114 &404389553 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9119072103722029972, guid: 42ab3808a6d63f04caf744d6658bb046,
-    type: 3}
-  m_PrefabInstance: {fileID: 404389552}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &410668240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4715855517597694893, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -1864,6 +1851,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &699171730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5926667564994599979, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &699171731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699171730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f597f7437d177b44bc07d02e6434b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoInicial: 0
+  textoCronometro: {fileID: 0}
+  textoMonedas: {fileID: 871642072}
+  mario: {fileID: 1750007079}
 --- !u!1 &703869616 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 318088698278786495, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -2805,28 +2814,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &874252195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5926667564994599979, guid: 42ab3808a6d63f04caf744d6658bb046,
+--- !u!114 &871642072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9119072102830137736, guid: 42ab3808a6d63f04caf744d6658bb046,
     type: 3}
   m_PrefabInstance: {fileID: 404389552}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &874252196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874252195}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f597f7437d177b44bc07d02e6434b94, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoInicial: 5
-  textoCronometro: {fileID: 404389553}
-  textoMonedas: {fileID: 226390628}
-  mario: {fileID: 1750007079}
 --- !u!1 &913499521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8422648629136931418, guid: 379e0a1608592c14381d9e21a6c90989,
