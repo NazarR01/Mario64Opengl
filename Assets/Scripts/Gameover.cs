@@ -21,12 +21,14 @@ public class Gameover : MonoBehaviour
 
     void Start()
     {
-        panel.SetActive(false);
+      
         cameraControl = FindObjectOfType<CameraAndInput>();
     }
 
     public void TriggerGameOver()
     {
+          Debug.Log("Método TriggerGameOver ejecutado");
+
         if (isGameOver) return;
         isGameOver = true;
 
@@ -63,33 +65,40 @@ public class Gameover : MonoBehaviour
         }
     }
 
-    IEnumerator ShowGameOverMenuAfterDelay()
+ IEnumerator ShowGameOverMenuAfterDelay()
+{
+    yield return new WaitForSeconds(delayBeforeMenu);
+
+    // Pausar todo menos Mario, el panel y este script
+    PauseAllExcept(marioObject); // <- Asegura que no se incluya la cámara
+
+    // ¡NO desbloqueamos la cámara aquí!
+    if (cameraControl != null)
+        cameraControl.cameraPaused = true;
+
+    Cursor.visible = true;
+    Cursor.lockState = CursorLockMode.None;
+
+    currentIndex = 0;
+    UpdateCursorPosition();
+}
+
+ void PauseAllExcept(GameObject exceptObject)
+{
+    var allBehaviours = FindObjectsOfType<MonoBehaviour>();
+
+    foreach (var script in allBehaviours)
     {
-        yield return new WaitForSeconds(delayBeforeMenu);
+        if (script == this) continue; // Este script sí debe seguir
+        if (script is CameraAndInput) continue; // NO pausar manualmente (ya está pausado con `cameraPaused`)
+        if (script.gameObject == panel || script.transform.IsChildOf(panel.transform)) continue;
+        if (exceptObject != null && (script.gameObject == exceptObject || script.transform.IsChildOf(exceptObject.transform)))
+            continue;
 
-        PauseAllExcept(marioObject); // Pausar todo excepto Mario
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-
-        currentIndex = 0;
-        UpdateCursorPosition();
+        script.enabled = false;
     }
+}
 
-    void PauseAllExcept(GameObject exceptObject)
-    {
-        var allBehaviours = FindObjectsOfType<MonoBehaviour>();
-
-        foreach (var script in allBehaviours)
-        {
-            if (script == this || script is CameraAndInput) continue;
-            if (script.gameObject == panel || script.transform.IsChildOf(panel.transform)) continue;
-            if (exceptObject != null && (script.gameObject == exceptObject || script.transform.IsChildOf(exceptObject.transform)))
-                continue;
-
-            script.enabled = false;
-        }
-    }
 
     void Update()
     {
