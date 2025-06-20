@@ -22,7 +22,7 @@ public class Star : MonoBehaviour
     [SerializeField] private GameObject monedas;
     [SerializeField] private GameObject textotimer;
     
-    private bool starGrabbed = false;
+    public bool starGrabbed = false;
     public bool StarGrabbed => starGrabbed;
     private const int ACT_STAR_DANCE_EXIT = 0x00001302;
     private Camera victoryCamera;

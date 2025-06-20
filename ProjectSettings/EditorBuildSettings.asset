@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Niveles/NivelRAUL/Lava Land.unity
     guid: 817215cafe9defb43987676640c803d6
+  - enabled: 1
+    path: Assets/Niveles/NivelSurvival/Nivel Survival.unity
+    guid: 91ec6df2457893f40b63fecea2a17bbe
   m_configObjects: {}
