@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using LibSM64;
+
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
@@ -9,36 +10,47 @@ public class PauseManager : MonoBehaviour
     public RectTransform cursorDot;             // Punto como cursor
     public Vector2 offset = new Vector2(-60f, -5f); // Posición relativa del cursor
 
-     public AudioClip pauseAudioClip;
+    public AudioClip pauseAudioClip;
     [Range(0f,1f)] public float pauseAudioVolume = 1f;
 
-
-
     private CameraAndInput cameraControl;
+    private CameraR cameraRControl; // Suponiendo que tienes este tipo para la cámara alternativa
+
     private int selectedIndex = 0;
     private bool isPaused = false;
     private float moveDelay = 0.2f;
     private float lastMoveTime = 0f;
+
     [SerializeField] private Gameover gameoverScript;
-     [SerializeField] private Star Starscript;
+    [SerializeField] private Star Starscript;
     [SerializeField] private GameObject Heart;
-[SerializeField] private GameObject monedas;
-[SerializeField] private GameObject textotimer;
+    [SerializeField] private GameObject monedas;
+    [SerializeField] private GameObject textotimer;
+
     void Start()
     {
         pauseMenuPanel.SetActive(false);
         MoveCursorToSelected();
 
         cameraControl = FindObjectOfType<CameraAndInput>();
+
         if (cameraControl == null)
-            Debug.LogWarning("No se encontró el script CameraAndInput en la escena.");
+        {
+            // Buscar el componente CameraR si no hay CameraAndInput
+            cameraRControl = FindObjectOfType<CameraR>();
+
+            if (cameraRControl == null)
+            {
+                Debug.LogWarning("No se encontró CameraAndInput ni CameraR en la escena.");
+            }
+        }
     }
 
     void Update()
     {
-           if (gameoverScript != null && gameoverScript.IsGameOver)
-        return;
-          if (Starscript.StarGrabbed) return; // Si ganaste, no permitas pausar
+        if (gameoverScript != null && gameoverScript.IsGameOver)
+            return;
+        if (Starscript != null && Starscript.StarGrabbed) return; // Si ganaste, no permitas pausar
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -76,7 +88,6 @@ public class PauseManager : MonoBehaviour
 
     void PauseGame()
     {
-
         isPaused = true;
         Time.timeScale = 0f;
         pauseMenuPanel.SetActive(true);
@@ -88,15 +99,14 @@ public class PauseManager : MonoBehaviour
         if (pauseAudioClip != null)
             AudioSource.PlayClipAtPoint(pauseAudioClip, transform.position, pauseAudioVolume);
 
-
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
         if (cameraControl != null)
             cameraControl.cameraPaused = true;
+        else if (cameraRControl != null)
+            cameraRControl.cameraPaused = true;  // Asumiendo que CameraR tiene cameraPaused o similar
     }
-
-
 
     public void ResumeGame()
     {
@@ -104,16 +114,17 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenuPanel.SetActive(false);
 
-
-    if (Heart != null) Heart.SetActive(true);
-    if (monedas != null) monedas.SetActive(true);
-    if (textotimer != null) textotimer.SetActive(true);
+        if (Heart != null) Heart.SetActive(true);
+        if (monedas != null) monedas.SetActive(true);
+        if (textotimer != null) textotimer.SetActive(true);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
         if (cameraControl != null)
             cameraControl.cameraPaused = false;
+        else if (cameraRControl != null)
+            cameraRControl.cameraPaused = false;
     }
 
     void MoveCursorToSelected()
@@ -128,7 +139,6 @@ public class PauseManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Time.timeScale = 1f;
-     
         SceneManager.LoadScene("LvlSelect");
     }
 }

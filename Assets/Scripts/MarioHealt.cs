@@ -31,11 +31,17 @@ public class MarioHealt : MonoBehaviour
 
         if (rawHealth != lastHealth)
         {
-            lastHealth = rawHealth;
-            UpdateHearts(rawHealth);
+               lastHealth = rawHealth;
+        fullHearts = GetHeartCount(rawHealth);
+        
+        // Validación: si no tiene corazones pero sigue vivo internamente, le damos 1 corazón visual
+        if (fullHearts == 0 && rawHealth > 255)
+        {    Debug.LogWarning($"{rawHealth}");
+            Debug.LogWarning("[MarioHealt] Mario tiene 0 corazones visuales pero aún sigue vivo. Corrigiendo UI...");
+            fullHearts = 1; // Mostrar 1 corazón como emergencia
+        }else{UpdateHearts(rawHealth);}
 
-            fullHearts = GetHeartCount(rawHealth);
-
+        
             if (!gameOverShown && fullHearts == 0)
             {
                 gameOverShown = true;
@@ -47,7 +53,7 @@ public class MarioHealt : MonoBehaviour
 
     // Actualiza sprites de corazones
     void UpdateHearts(int rawHealth)
-    {
+    {   
         fullHearts = GetHeartCount(rawHealth);
 
         for (int i = 0; i < hearts.Length; i++)

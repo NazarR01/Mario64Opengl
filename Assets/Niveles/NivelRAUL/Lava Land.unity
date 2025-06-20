@@ -1017,6 +1017,16 @@ PrefabInstance:
       propertyPath: Starscript
       value: 
       objectReference: {fileID: 1503449200}
+    - target: {fileID: 5926667563822671218, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: marioTransform
+      value: 
+      objectReference: {fileID: 1750007083}
+    - target: {fileID: 5926667563822671218, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: marioObject
+      value: 
+      objectReference: {fileID: 1750007079}
     - target: {fileID: 5926667564994599977, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: mario
@@ -5460,9 +5470,9 @@ GameObject:
   - component: {fileID: 1750007083}
   - component: {fileID: 1750007082}
   - component: {fileID: 1750007081}
-  - component: {fileID: 1750007080}
   - component: {fileID: 1750007085}
   - component: {fileID: 1750007084}
+  - component: {fileID: 1750007080}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -5479,18 +5489,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750007079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d454740edb0c4a44ab15f24f8ac6333, type: 3}
+  m_Script: {fileID: 11500000, guid: 056ea02486d9d8e4a854b387d7db6368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPaused: 0
   cameraObject: {fileID: 1198335051}
   mouseSensitivity: 2
-  fixedPitch: 0
+  fixedPitch: 20
   cameraDistance: 10
   zoomSpeed: 2
   minZoom: 2
   maxZoom: 10
-  lookAtHeight: 3
+  lookAtHeight: 7.5
   starCutsceneDuration: 3
   starCutsceneRadiusOffset: 2.5
   starCutsceneHeightOffset: 1.5

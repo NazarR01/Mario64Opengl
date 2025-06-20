@@ -380,7 +380,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Evita a los enemigos y llega a la cima para ganar
+  m_Text: Avoid the enemies and reach the top to win.
 --- !u!222 &346730879
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -446,20 +446,22 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c83080bab1ff51f438e449572dd32073, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
+    m_BestFit: 0
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Recoge 14 monedas para ganar!
+  m_Text: 'Watch out for the lava.
 
-    Cuidado con la lava'
+    Collect 14 coins to win!
+
+'
 --- !u!222 &391929756
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1516,7 +1518,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sobrevive a las bombas hasta que el tiempo se acabe.
+  m_Text: Survive the bombs until time runs out.
 --- !u!222 &1827866770
 CanvasRenderer:
   m_ObjectHideFlags: 0

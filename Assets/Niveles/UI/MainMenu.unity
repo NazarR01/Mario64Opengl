@@ -189,10 +189,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "CONTROLES\r\n\r\nMovimiento:     W, A, S, D\r\nC\xE1mara libre:   Mouse
-    (movimiento)\r\nSaltar:         Barra espaciadora\r\nAgacharse:      Shift izquierdo\r\nAtacar:        
-    Click izquierdo del mouse\r\nPausa:          Esc\r\nSeleccionar en men\xFA: Flechas
-    o W/S\r\nConfirmar:      Enter / Espacio\r\nCancelar / Salir: Esc\r\n"
+  m_Text: "CONTROLS\r\n\r\nMovement:         W, A, S, D  \r\nFree camera:      Mouse
+    (move)  \r\nJump:             Spacebar  \r\nCrouch:           Left Shift  \r\nAttack:          
+    Left Mouse Click  \r\nPause:            Esc  \r\nNavigate Menu:    Arrow Keys
+    or W/S  \r\nConfirm:          Enter / Space  \r\nCancel / Back:    Esc\r\n"
 --- !u!222 &73177417
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Salir
+  m_Text: Quit
 --- !u!222 &593354401
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1083,7 +1083,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nuevo Juego
+  m_Text: 'New Game
+
+'
 --- !u!222 &1536089010
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1728,9 +1730,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Controles
-
-'
+  m_Text: Controls
 --- !u!222 &1991773794
 CanvasRenderer:
   m_ObjectHideFlags: 0
