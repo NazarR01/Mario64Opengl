@@ -55,6 +55,7 @@ public class MarioHealt : MonoBehaviour
                 hearts[i].sprite = i < fullHearts ? fullHeart : emptyHeart;
         }
     }
+   
 
     int GetHeartCount(int rawHealth)
     {

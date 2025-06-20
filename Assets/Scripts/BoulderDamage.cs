@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using LibSM64;
 public class BoulderDamage : MonoBehaviour
 {
    [SerializeField] private int damage = 1;
@@ -15,7 +15,7 @@ public class BoulderDamage : MonoBehaviour
 
             if (marioHealth != null && marioInvul != null && !marioInvul.IsInvulnerable())
             {
-                marioHealth.ApplyDamage(damage);
+                 Interop.sm64_mario_apply_damage(0, 3);
                 marioInvul.StartInvulnerability(3f);
             }
         }
