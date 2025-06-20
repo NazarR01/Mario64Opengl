@@ -1,14 +1,34 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine.UI; //
+using UnityEngine.UI;
+
 public class MenuP : MonoBehaviour
 {
-    // Nombre de la escena del juego (la que quieres cargar cuando empieza el juego)
     [SerializeField] private string gameSceneName = "GameScene";
- public float fadeDuration = 1.5f; 
-     public GameObject fadePanel;   
-     
+    public float fadeDuration = 1.5f;
+    public GameObject fadePanel;
+
+    [Header("Panel de controles")]
+    [SerializeField] private GameObject controlesPanel; // Panel de controles
+    [SerializeField] private GameObject menuPrincipal;  // Panel u objeto con los botones
+    [SerializeField] private MenuC menuControlScript;   // Script del control del menú (si es un componente aparte)
+
+    void Start()
+    {
+        if (controlesPanel != null)
+            controlesPanel.SetActive(false); // Ocultar al inicio
+    }
+
+    void Update()
+    {
+        // Si el panel está activo y se presiona Enter
+        if (controlesPanel != null && controlesPanel.activeSelf && Input.GetKeyDown(KeyCode.Return))
+        {
+            OcultarControles();
+        }
+    }
+
     public void StartGame()
     {
         if (fadePanel != null)
@@ -17,11 +37,11 @@ public class MenuP : MonoBehaviour
             var img = fadePanel.GetComponent<Image>();
             img.color = new Color(0, 0, 0, 0); // Transparente al inicio
         }
-        // Carga la escena principal del juego
+
         StartCoroutine(FadeAndLoadScene());
     }
 
-  IEnumerator FadeAndLoadScene()
+    IEnumerator FadeAndLoadScene()
     {
         if (fadePanel != null)
         {
@@ -41,22 +61,43 @@ public class MenuP : MonoBehaviour
             fadeImage.color = new Color(color.r, color.g, color.b, 1f);
         }
 
-      
-        
-            if (!string.IsNullOrEmpty(gameSceneName))
-                SceneManager.LoadScene(gameSceneName);
-        
+        if (!string.IsNullOrEmpty(gameSceneName))
+            SceneManager.LoadScene(gameSceneName);
     }
-
 
     public void ExitGame()
     {
         Debug.Log("Salir del juego");
         Application.Quit();
 
-        // En el editor no cierra, por eso esto:
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    // Mostrar el panel de controles
+    public void MostrarControles()
+    {
+        if (controlesPanel != null)
+            controlesPanel.SetActive(true);
+
+        if (menuPrincipal != null)
+            menuPrincipal.SetActive(false);
+
+        if (menuControlScript != null)
+            menuControlScript.enabled = false;
+    }
+
+    // Ocultar el panel de controles
+    public void OcultarControles()
+    {
+        if (controlesPanel != null)
+            controlesPanel.SetActive(false);
+
+        if (menuPrincipal != null)
+            menuPrincipal.SetActive(true);
+
+        if (menuControlScript != null)
+            menuControlScript.enabled = true;
     }
 }

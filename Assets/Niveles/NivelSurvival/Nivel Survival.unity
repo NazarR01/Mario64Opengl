@@ -635,6 +635,11 @@ PrefabInstance:
       propertyPath: marioObject
       value: 
       objectReference: {fileID: 1418342209}
+    - target: {fileID: 5926667564994599977, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: mario
+      value: 
+      objectReference: {fileID: 1418342214}
     - target: {fileID: 5926667565127692444, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_Name

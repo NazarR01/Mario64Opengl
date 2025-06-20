@@ -159,7 +159,7 @@ public class Gameover : MonoBehaviour
             cameraControl.cameraPaused = false;
 
         Time.timeScale = 1f;
-         Interop.MarioDelete(0);
+       
         SceneManager.LoadScene("LvlSelect");
     }
 }

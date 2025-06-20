@@ -128,7 +128,7 @@ public class PauseManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Time.timeScale = 1f;
-         Interop.MarioDelete(0);
+     
         SceneManager.LoadScene("LvlSelect");
     }
 }

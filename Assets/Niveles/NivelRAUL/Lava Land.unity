@@ -2819,7 +2819,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 404389552}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1395134281}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -4488,6 +4488,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1395134281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9119072102830137737, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1452886542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9119072103722029970, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1478990344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4813,9 +4825,10 @@ MonoBehaviour:
   cameraHeight: 2
   delayBeforeReturn: 3
   fadeDuration: 2
-  Heart: {fileID: 0}
-  monedas: {fileID: 0}
-  textotimer: {fileID: 0}
+  Heart: {fileID: 1862467738}
+  monedas: {fileID: 1395134281}
+  textotimer: {fileID: 1452886542}
+  starGrabbed: 0
 --- !u!1 &1601557286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7241776113743774378, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -5814,6 +5827,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1862467738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7534436066045868046, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874583850
 PrefabInstance:
   m_ObjectHideFlags: 0
