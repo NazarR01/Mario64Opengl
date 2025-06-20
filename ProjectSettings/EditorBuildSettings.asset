@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/pipescene.unity
     guid: 40fa7e10f53362888bdc3106e8750061
   - enabled: 1
-    path: Assets/UI/MainMenu.unity
+    path: Assets/Niveles/UI/MainMenu.unity
     guid: 9fad2e7acd532ad449d4a35371bffdb7
   m_configObjects: {}

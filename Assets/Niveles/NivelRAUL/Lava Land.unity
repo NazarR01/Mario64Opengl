@@ -291,7 +291,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113291297}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.640656
   m_Height: 39.284615
@@ -331,11 +331,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &131725406
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -358,7 +360,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131725404}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -425,7 +427,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -506,7 +508,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152074785}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.640656
   m_Height: 39.284615
@@ -528,6 +530,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &226390628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9119072102830137736, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &228696664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -657,7 +671,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -741,7 +755,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -906,7 +920,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336255484}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.64051
   m_Height: 39.281013
@@ -928,6 +942,233 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &404389552
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1683492243647561889, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683492243647561889, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683492243647561889, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683492243647561889, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873639055867431924, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873639055867431924, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873639055867431924, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873639055867431924, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314933673952932761, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: mario
+      value: 
+      objectReference: {fileID: 1750007079}
+    - target: {fileID: 2728240285153636646, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728240285153636646, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728240285153636646, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728240285153636646, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667564994599977, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: mario
+      value: 
+      objectReference: {fileID: 1750007081}
+    - target: {fileID: 5926667565127692444, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692448, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1198335053}
+    - target: {fileID: 5926667565127692448, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2314933673952932761, guid: 42ab3808a6d63f04caf744d6658bb046, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 42ab3808a6d63f04caf744d6658bb046, type: 3}
+--- !u!114 &404389553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9119072103722029972, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410668240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4715855517597694893, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -1101,7 +1342,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -1158,11 +1399,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &460303549
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1185,7 +1428,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460303547}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -1225,11 +1468,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &507557041
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1252,7 +1497,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507557039}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -1420,11 +1665,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &559974810
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1447,7 +1694,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559974808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -1639,7 +1886,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703869616}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.638855
   m_Height: 39.284615
@@ -1767,7 +2014,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716274641}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.642288
   m_Height: 39.27775
@@ -2063,11 +2310,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &752807678
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2090,7 +2339,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752807676}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -2221,7 +2470,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -2369,7 +2618,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -2514,7 +2763,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870001059}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.638794
   m_Height: 39.284615
@@ -2536,6 +2785,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &874252195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5926667564994599979, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &874252196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874252195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f597f7437d177b44bc07d02e6434b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoInicial: 120
+  textoCronometro: {fileID: 404389553}
+  textoMonedas: {fileID: 226390628}
+  mario: {fileID: 1750007079}
 --- !u!1 &913499521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8422648629136931418, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -2578,7 +2849,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913499521}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.640457
   m_Height: 39.280952
@@ -2720,7 +2991,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014830352}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.640198
   m_Height: 39.280373
@@ -2944,17 +3215,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 81.73
+      value: 167.3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.02
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 56.51
+      value: 40.98
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -2979,7 +3250,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -3211,7 +3482,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -3268,11 +3539,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &1193046415
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3295,7 +3568,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193046413}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -3570,7 +3843,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271862450}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.640503
   m_Height: 39.281013
@@ -3592,6 +3865,133 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1272554617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1272554618}
+  - component: {fileID: 1272554619}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1272554618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272554617}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 92.97, y: 0.68, z: -8.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1272554619
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272554617}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2ea0cad81d54c6044a7d5ef816580657, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.802
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 74
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1272776895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 21595595907175870, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -3634,7 +4034,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272776895}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.638847
   m_Height: 39.284645
@@ -3656,6 +4056,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1285510811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2221472391492745231, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1301333768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8000363434947470927, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -3734,7 +4140,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344317345}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -3766,11 +4172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!54 &1344317349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3832,7 +4240,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -3950,7 +4358,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.82
+      value: 0.82000005
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -3960,7 +4368,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -4173,7 +4581,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1503449195 stripped
 GameObject:
@@ -4193,7 +4601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bde50936f09b0499a0d48fed7b0428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marioId: 0
   velocidadRotacion: 90
 --- !u!54 &1503449197
 Rigidbody:
@@ -4239,6 +4646,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: 0bdbaa623ccdced41b6817d56599e9ed, type: 3}
+--- !u!114 &1503449200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503449195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc5cb9d09e34d64b8af5dbdac7b811f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marioId: 0
+  starTag: Star
+  winPanel: {fileID: 1285510811}
+  marioTransform: {fileID: 1750007083}
+  fadePanel: {fileID: 2018000416}
+  mainCamera: {fileID: 1198335053}
+  cameraDistance: 3
+  cameraHeight: 2
+  delayBeforeReturn: 3
+  fadeDuration: 2
 --- !u!1 &1601557286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7241776113743774378, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -4362,7 +4791,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -4635,7 +5064,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667411749}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.63884
   m_Height: 39.284615
@@ -4675,11 +5104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &1682864076
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4702,7 +5133,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682864074}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -4742,11 +5173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &1720470881
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4769,7 +5202,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720470879}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -4833,7 +5266,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742413179}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.64215
   m_Height: 39.279
@@ -4936,11 +5369,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750007079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92.97, y: 0.68, z: -9.1}
+  m_LocalPosition: {x: 92.97, y: 0.68, z: -8.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1750007084
 Rigidbody:
@@ -4968,10 +5401,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.66696715
+  m_Height: 1.6632333
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.00024199486, y: 0.26512647, z: -0.0342288}
 --- !u!1 &1755669668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1256234410298126785, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -5054,11 +5487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &1784119793
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5081,7 +5516,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784119791}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -5209,7 +5644,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856262064}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.640198
   m_Height: 39.280403
@@ -5276,7 +5711,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -5333,11 +5768,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &1876060106
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5360,7 +5797,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876060104}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -5400,11 +5837,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &1879734063
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5427,7 +5866,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879734061}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -5531,11 +5970,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &1883797712
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5558,7 +5999,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883797710}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
@@ -5622,7 +6063,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969107875}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 19.642303
   m_Height: 39.277657
@@ -5644,6 +6085,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1969107883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969107875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee83ef642c5dbf4b8f2d65c7e851f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hundimiento: 0.5
+  velocidad: 2
+  playerTag: Player
+  posicionInicial: {x: 0, y: 0, z: 0}
+  marioEncima: 0
+  fueActivada: 0
 --- !u!1001 &1988717415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5669,7 +6128,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -5689,7 +6148,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -5728,6 +6187,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5781c1559396a3a49b75111357555c13, type: 3}
+--- !u!1 &2018000416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2696721192479373493, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 404389552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2077019223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1320924105600917972, guid: 379e0a1608592c14381d9e21a6c90989,
@@ -5810,11 +6275,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7554565504e2d8747b191a76ea5554e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioId: 0
   playerTag: Player
   velocidadRotacion: 90
+  coinSound: {fileID: 8300000, guid: 0d2dccf769f8f6a47966a21f7c5fa0e4, type: 3}
+  coinSoundVolume: 1
   estrellaExistente: {fileID: 1503449195}
   alturaExtra: 1.5
-  radioDeteccion: 1
 --- !u!64 &2081747740
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5837,7 +6304,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081747738}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.010000002
   m_Height: 0.020000007
