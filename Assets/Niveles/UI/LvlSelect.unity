@@ -1047,7 +1047,7 @@ MonoBehaviour:
   levelSceneNames:
   - 
   - Lava land
-  - 
+  - Nivel Survival
   fadePanel: {fileID: 37992652}
   fadeDuration: 1.5
 --- !u!1 &1431332969

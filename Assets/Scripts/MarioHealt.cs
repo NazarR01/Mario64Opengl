@@ -5,7 +5,7 @@ using LibSM64;
 public class MarioHealt : MonoBehaviour
 {
     [SerializeField] private LibSM64.SM64Mario mario = null;     // Referencia a Mario
-    [SerializeField] private Image[] hearts;                     // Corazones UI
+    [SerializeField] private Image[] hearts=null;                     // Corazones UI
     [SerializeField] private Sprite fullHeart;                   // Sprite corazón lleno
     [SerializeField] private Sprite emptyHeart;                  // Sprite corazón vacío
     [SerializeField] private GameObject gameOverPanel = null;    // Panel Game Over

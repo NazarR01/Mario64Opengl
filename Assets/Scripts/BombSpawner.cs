@@ -179,10 +179,7 @@ public class BombSpawner : MonoBehaviour
         {
             be.marioTransform = marioTransform;
         }
-        else
-        {
-            Debug.LogWarning("[BobombSpawner] El prefab bobombPrefab no tiene Bobomb.");
-        }
+      
 
         existingPositions.Add(new Vector2(spawnPos.x, spawnPos.z));
     }
