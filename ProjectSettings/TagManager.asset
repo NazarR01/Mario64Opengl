@@ -11,6 +11,7 @@ TagManager:
   - Boulder
   - Mario
   - Lava
+  - DeathZone
   layers:
   - Default
   - TransparentFX

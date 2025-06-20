@@ -6,7 +6,7 @@ using LibSM64;
 [RequireComponent(typeof(Collider))]
 public class Coin : MonoBehaviour
 {
-    [Tooltip("ID de Mario en libsm64")]
+     [Tooltip("ID de Mario en libsm64")]
     public uint marioId;
 
     [Tooltip("Tag que debe tener el jugador (Mario)")]
@@ -47,4 +47,9 @@ public class Coin : MonoBehaviour
         return coinCount;
     }
 
+    // 🔁 Nuevo: permite reiniciar el conteo cuando se reinicia el nivel
+    public static void ResetCoinCount()
+    {
+        coinCount = 0;
+    }
 }

@@ -2511,6 +2511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIJonathan
       objectReference: {fileID: 0}
+    - target: {fileID: 1476975508870514305, guid: dfa9f8b6fda9ef14f9f8af671cb7fbf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1476975508870514364, guid: dfa9f8b6fda9ef14f9f8af671cb7fbf4,
         type: 3}
       propertyPath: m_LocalPosition.x
