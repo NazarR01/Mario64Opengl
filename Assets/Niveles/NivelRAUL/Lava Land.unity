@@ -753,7 +753,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -2448,7 +2448,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -2782,7 +2782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoInicial: 120
-  textoCronometro: {fileID: 2004516460}
+  textoCronometro: {fileID: 0}
   textoMonedas: {fileID: 226390628}
   mario: {fileID: 1750007079}
 --- !u!1 &913499521 stripped
@@ -4422,7 +4422,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1503449195 stripped
 GameObject:
@@ -5189,7 +5189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1750007084
 Rigidbody:
@@ -5938,7 +5938,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5781c1559396a3a49b75111357555c13,
         type: 3}
@@ -5977,18 +5977,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5781c1559396a3a49b75111357555c13, type: 3}
---- !u!114 &2004516460 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9119072103722029972, guid: 42ab3808a6d63f04caf744d6658bb046,
-    type: 3}
-  m_PrefabInstance: {fileID: 404389552}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2077019223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1320924105600917972, guid: 379e0a1608592c14381d9e21a6c90989,
