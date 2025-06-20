@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wii - Mario Super Sluggers - Goomba & Paragoomba
+* source:	https://sketchfab.com/3d-models/wii-mario-super-sluggers-goomba-paragoomba-adef997d5bd6448091099a41209d85a7
+* author:	Waffles (https://sketchfab.com/jkimmel694)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wii - Mario Super Sluggers - Goomba & Paragoomba" (https://sketchfab.com/3d-models/wii-mario-super-sluggers-goomba-paragoomba-adef997d5bd6448091099a41209d85a7) by Waffles (https://sketchfab.com/jkimmel694) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
