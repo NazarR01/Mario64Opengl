@@ -248,7 +248,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &166729394 stripped
 GameObject:
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goombaPrefab: {fileID: 3070184370973129030, guid: 4a99d1bafc62f704b9e6ff7fbeac4f88,
     type: 3}
-  marioTransform: {fileID: 1351271833}
+  marioTransform: {fileID: 1961907612}
   intervalo: 4
   maxGoombas: 7
 --- !u!4 &259961482
@@ -826,7 +826,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &416565363
 MonoBehaviour:
@@ -1104,7 +1104,7 @@ Transform:
   m_LocalScale: {x: 7, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &555231943
 GameObject:
@@ -1233,7 +1233,7 @@ Transform:
   m_LocalScale: {x: 7, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &622403965
 PrefabInstance:
@@ -1420,6 +1420,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4efb01c5d0d83284fb214813132d4ac7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f3c5034448cb064189f896548e89b9e, type: 3}
+--- !u!114 &641579980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5926667564994599977, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 9119072103710392745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1362a10a38934c479d82bebd7b748e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &673403682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,7 +1681,7 @@ Transform:
   m_LocalScale: {x: 7, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773194594
 GameObject:
@@ -1798,7 +1810,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &791406660 stripped
 GameObject:
@@ -1993,7 +2005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goombaPrefab: {fileID: 3070184370973129030, guid: 4a99d1bafc62f704b9e6ff7fbeac4f88,
     type: 3}
-  marioTransform: {fileID: 1351271833}
+  marioTransform: {fileID: 1961907612}
   intervalo: 4
   maxGoombas: 8
 --- !u!4 &923493173
@@ -2075,7 +2087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goombaPrefab: {fileID: 3070184370973129030, guid: 4a99d1bafc62f704b9e6ff7fbeac4f88,
     type: 3}
-  marioTransform: {fileID: 1351271833}
+  marioTransform: {fileID: 1961907612}
   intervalo: 4
   maxGoombas: 8
 --- !u!4 &970685894
@@ -2137,7 +2149,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 16acd29fd6f9b7a4eb857b03d76d640d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 16acd29fd6f9b7a4eb857b03d76d640d,
         type: 3}
@@ -2201,6 +2213,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marioId: 0
   starTag: Star
+  winPanel: {fileID: 0}
+  marioTransform: {fileID: 0}
+  fadePanel: {fileID: 0}
+  mainCamera: {fileID: 0}
+  cameraDistance: 5.5
+  cameraHeight: 2
+  delayBeforeReturn: 3
+  fadeDuration: 2
+  Heart: {fileID: 0}
+  monedas: {fileID: 0}
+  textotimer: {fileID: 0}
 --- !u!65 &983914520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2281,7 +2304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goombaPrefab: {fileID: 3070184370973129030, guid: 4a99d1bafc62f704b9e6ff7fbeac4f88,
     type: 3}
-  marioTransform: {fileID: 1351271833}
+  marioTransform: {fileID: 1961907612}
   intervalo: 4
   maxGoombas: 8
 --- !u!4 &1172918299
@@ -2339,6 +2362,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4205818791492564770, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
+        type: 3}
+      propertyPath: cameraObject
+      value: 
+      objectReference: {fileID: 2068843812}
     - target: {fileID: 4774153977611556336, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
         type: 3}
       propertyPath: m_Name
@@ -2504,84 +2532,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6662406567642017945, guid: 1f3c5034448cb064189f896548e89b9e, type: 3}
---- !u!1 &1351271828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4774153977611556336, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
-    type: 3}
-  m_PrefabInstance: {fileID: 1236737340}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1351271829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351271828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d454740edb0c4a44ab15f24f8ac6333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPaused: 0
-  cameraObject: {fileID: 2068843812}
-  mouseSensitivity: 2
-  fixedPitch: 20
-  cameraDistance: 10
-  zoomSpeed: 2
-  minZoom: 2
-  maxZoom: 10
-  lookAtHeight: 7.5
-  starCutsceneDuration: 3
-  starCutsceneRadiusOffset: 2.5
-  starCutsceneHeightOffset: 1.5
---- !u!114 &1351271832 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4774153977611556343, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
-    type: 3}
-  m_PrefabInstance: {fileID: 1236737340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351271828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d31bc207218a3e604aff01c14f053e5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1351271833 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4774153977611556342, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
-    type: 3}
-  m_PrefabInstance: {fileID: 1236737340}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1351271834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351271828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8161111fe4e2946ade914a9b6286ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1351271835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351271828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1362a10a38934c479d82bebd7b748e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mario: {fileID: 1351271832}
-  hearts: []
-  fullHeart: {fileID: 21300000, guid: bcd40fabda0109a4eb92f5da3d84924d, type: 3}
-  emptyHeart: {fileID: 21300000, guid: df60688bc2f811548972c618cd540404, type: 3}
-  gameOverPanel: {fileID: 1726203107}
-  gameoverScript: {fileID: 1726203109}
 --- !u!1 &1400720064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 117b5cd3be118454a913d71eb4f7c00f,
@@ -2745,7 +2695,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413044011
 GameObject:
@@ -2966,7 +2916,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527812862
 GameObject:
@@ -2999,7 +2949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goombaPrefab: {fileID: 3070184370973129030, guid: 4a99d1bafc62f704b9e6ff7fbeac4f88,
     type: 3}
-  marioTransform: {fileID: 1351271833}
+  marioTransform: {fileID: 1961907612}
   intervalo: 4
   maxGoombas: 5
 --- !u!4 &1527812864
@@ -3143,7 +3093,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1563955986 stripped
 GameObject:
@@ -3243,7 +3193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1706254039
 GameObject:
@@ -3352,26 +3302,8 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1726203107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5926667563822671214, guid: 42ab3808a6d63f04caf744d6658bb046,
-    type: 3}
-  m_PrefabInstance: {fileID: 9119072103710392745}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1726203109 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5926667563822671218, guid: 42ab3808a6d63f04caf744d6658bb046,
-    type: 3}
-  m_PrefabInstance: {fileID: 9119072103710392745}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726203107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f1412968a9eed14591f0154dea29621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1799386279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,7 +3431,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1802510968 stripped
 GameObject:
@@ -3696,7 +3628,7 @@ Transform:
   m_LocalScale: {x: 7, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1926328435 stripped
 GameObject:
@@ -3859,8 +3791,32 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1961907605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4205818791492564771, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1236737340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1961907611 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4205818791492564783, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1236737340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961907605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31bc207218a3e604aff01c14f053e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1961907612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4205818791492564782, guid: d60644a18f2cd3e4b99ce2b0ec5cfc27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1236737340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2022627744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1711491773456283631, guid: 1f3c5034448cb064189f896548e89b9e,
@@ -3972,7 +3928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goombaPrefab: {fileID: 3070184370973129030, guid: 4a99d1bafc62f704b9e6ff7fbeac4f88,
     type: 3}
-  marioTransform: {fileID: 1351271833}
+  marioTransform: {fileID: 1961907612}
   intervalo: 4
   maxGoombas: 8
 --- !u!4 &2066782308
@@ -4062,7 +4018,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &2068843815
 AudioListener:
@@ -4123,7 +4079,17 @@ PrefabInstance:
         type: 3}
       propertyPath: mario
       value: 
-      objectReference: {fileID: 1351271828}
+      objectReference: {fileID: 1961907605}
+    - target: {fileID: 2314933673952932761, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: tiempoInicial
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314933673952932761, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: mariohealt
+      value: 
+      objectReference: {fileID: 641579980}
     - target: {fileID: 2728240285153636646, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -4144,16 +4110,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5926667563396275336, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: Starscript
+      value: 
+      objectReference: {fileID: 983914519}
     - target: {fileID: 5926667563822671218, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: marioTransform
       value: 
-      objectReference: {fileID: 1351271833}
+      objectReference: {fileID: 1961907612}
     - target: {fileID: 5926667563822671218, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: marioObject
       value: 
-      objectReference: {fileID: 1351271828}
+      objectReference: {fileID: 1961907605}
     - target: {fileID: 5926667564454859915, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4168,7 +4139,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mario
       value: 
-      objectReference: {fileID: 1351271832}
+      objectReference: {fileID: 1961907611}
     - target: {fileID: 5926667564994599977, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: gameOverClip
@@ -4222,7 +4193,7 @@ PrefabInstance:
     - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5926667565127692449, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
