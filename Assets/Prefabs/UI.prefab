@@ -445,6 +445,10 @@ MonoBehaviour:
   offset: {x: -50, y: -4}
   pauseAudioClip: {fileID: 0}
   pauseAudioVolume: 1
+  gameoverScript: {fileID: 5926667563822671218}
+  Heart: {fileID: 7534436066045868046}
+  monedas: {fileID: 9119072102830137737}
+  textotimer: {fileID: 9119072103722029970}
 --- !u!1 &5926667563565477883
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +754,9 @@ MonoBehaviour:
   marioTransform: {fileID: 0}
   marioObject: {fileID: 0}
   delayBeforeMenu: 4
+  Heart: {fileID: 7534436066045868046}
+  monedas: {fileID: 9119072102830137737}
+  textotimer: {fileID: 9119072103722029970}
 --- !u!1 &5926667563890325477
 GameObject:
   m_ObjectHideFlags: 0
