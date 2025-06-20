@@ -309,6 +309,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &458428978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2221472391492745231, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 757304928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &574805993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1241,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainType: 1
   surfaceType: 0
+--- !u!1 &1148186447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2696721192479373493, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 757304928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1423142044 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1087759508157170087, guid: 42ab3808a6d63f04caf744d6658bb046,
+    type: 3}
+  m_PrefabInstance: {fileID: 757304928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1530470765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1287,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marioId: 0
   starTag: Star
+  winPanel: {fileID: 458428978}
+  marioTransform: {fileID: 137517261}
+  fadePanel: {fileID: 1148186447}
+  victoryCamera: {fileID: 1423142044}
+  mainCamera: {fileID: 963194227}
+  cameraDistance: 3
+  cameraHeight: 2
+  delayBeforeReturn: 3
+  fadeDuration: 2
 --- !u!65 &1530470767
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class Gameover : MonoBehaviour
 
     void Start()
     {
-      
+        
         cameraControl = FindObjectOfType<CameraAndInput>();
     }
 
