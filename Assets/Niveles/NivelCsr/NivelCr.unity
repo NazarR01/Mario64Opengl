@@ -481,6 +481,16 @@ PrefabInstance:
       propertyPath: Starscript
       value: 
       objectReference: {fileID: 983914519}
+    - target: {fileID: 5926667563822671218, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: marioTransform
+      value: 
+      objectReference: {fileID: 314722891}
+    - target: {fileID: 5926667563822671218, guid: 42ab3808a6d63f04caf744d6658bb046,
+        type: 3}
+      propertyPath: marioObject
+      value: 
+      objectReference: {fileID: 314722883}
     - target: {fileID: 5926667564994599976, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1243,7 +1253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314722883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 156, z: -21.9}
+  m_LocalPosition: {x: 54.77, y: 82.28, z: 74.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2232,6 +2242,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 912f8df9dce181842b0cc16ea7f0383f, type: 2}
+    - target: {fileID: -1711491773456283631, guid: 1f3c5034448cb064189f896548e89b9e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 1f3c5034448cb064189f896548e89b9e,
         type: 3}
       propertyPath: m_Name
@@ -2439,9 +2454,10 @@ GameObject:
   - component: {fileID: 673403684}
   - component: {fileID: 673403683}
   - component: {fileID: 673403688}
+  - component: {fileID: 673403689}
   m_Layer: 0
   m_Name: Void
-  m_TagString: Untagged
+  m_TagString: DeathZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2529,7 +2545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673403682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 61.8, z: 4}
+  m_LocalPosition: {x: 1, y: 73.3, z: 4.5}
   m_LocalScale: {x: 1000, y: 2, z: 1000}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2547,6 +2563,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceecb7c2c09adf4cb0e8158fa36d2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &673403689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673403682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e913a9c06cb8fbc429712b446f866939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marioHealt: {fileID: 314722885}
 --- !u!1 &708064242
 GameObject:
   m_ObjectHideFlags: 0
