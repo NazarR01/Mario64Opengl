@@ -20,30 +20,43 @@ public class Goomba : MonoBehaviour
     public float patrolRadius = 4f;
     public float patrolInterval = 3f;
 
-    [Header("Pies")]
-    public Transform footLeft;
-    public Transform footRight;
-    public float footSwingAmount = 15f;
-    public float footSwingSpeed = 8f;
+    [Header("Audio")]
+    public AudioClip damageAudioClip;
+    [Range(0f, 1f)] public float damageAudioVolume = 1f;
+
+    public AudioClip alertAudioClip;
+    [Range(0f, 1f)] public float alertAudioVolume = 0.7f;
+
+    public AudioClip chaseLoopClip;
+    [Range(0f, 1f)] public float chaseLoopVolume = 0.5f;
+
+    [Tooltip("Tiempo (en segundos) que espera después del sonido de alerta antes de reproducir el sonido de persecución.")]
+    public float chaseDelay = 1f;
+
+    public AudioClip stompAudioClip;
+    [Range(0f, 1f)] public float stompAudioVolume = 1f;
 
     [Header("Aplastar")]
     public float stompHeightThreshold = 0.3f;
     public float squashDuration = 0.2f;
 
+    private AudioSource chaseLoopSource;
+    private bool hasPlayedAlert = false;
+    private bool isChaseLoopDelayed = false;
+
     private Rigidbody rb;
     private Vector3 patrolTarget;
     private float patrolTimer = 0f;
+
     private enum State { Patrol, Chase, Dead }
     private State currentState = State.Patrol;
 
-    private float footAnimTimer = 0f;
     private bool isDead = false;
+    private bool canChase = true; // Si puede perseguir a Mario o está bloqueado (cuando Mario es invulnerable)
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        // Evitar que se incline al moverse
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
         if (marioTransform == null)
@@ -53,6 +66,12 @@ public class Goomba : MonoBehaviour
             ChooseNewPatrolTarget();
         else
             currentState = State.Chase;
+
+        chaseLoopSource = gameObject.AddComponent<AudioSource>();
+        chaseLoopSource.clip = chaseLoopClip;
+        chaseLoopSource.loop = true;
+        chaseLoopSource.volume = chaseLoopVolume;
+        chaseLoopSource.playOnAwake = false;
     }
 
     void Update()
@@ -61,21 +80,34 @@ public class Goomba : MonoBehaviour
 
         float distToMario = Vector3.Distance(transform.position, marioTransform.position);
 
+        if (!canChase)
+        {
+            // Goomba no persigue mientras canChase es falso
+            StopChaseLoop();
+            return;
+        }
+
         if (currentState != State.Chase && distToMario <= detectionRadius)
+        {
             currentState = State.Chase;
+            PlayAlertOnce();
+            if (!isChaseLoopDelayed)
+                StartCoroutine(PlayChaseLoopAfterDelay(chaseDelay));
+        }
         else if (currentState == State.Chase && distToMario > detectionRadius && enablePatrol)
         {
             currentState = State.Patrol;
             patrolTimer = 0f;
+            StopChaseLoop();
+            hasPlayedAlert = false;
+            isChaseLoopDelayed = false;
         }
 
         switch (currentState)
         {
             case State.Patrol: PatrolBehavior(); break;
-            case State.Chase:  ChaseBehavior(); break;
+            case State.Chase: ChaseBehavior(); break;
         }
-
-        AnimateFeet();
     }
 
     void PatrolBehavior()
@@ -105,7 +137,9 @@ public class Goomba : MonoBehaviour
 
         if (dir.sqrMagnitude > 0.01f)
         {
-            transform.forward = Vector3.Slerp(transform.forward, dir, Time.deltaTime * 10f);
+            Vector3 desiredForward = -dir;
+            transform.forward = Vector3.Slerp(transform.forward, desiredForward, Time.deltaTime * 10f);
+
             Vector3 vel = dir * speed;
             vel.y = rb.velocity.y;
             rb.velocity = vel;
@@ -113,23 +147,6 @@ public class Goomba : MonoBehaviour
         else
         {
             rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
-        }
-    }
-
-    void AnimateFeet()
-    {
-        if (rb.velocity.magnitude > 0.1f)
-        {
-            footAnimTimer += Time.deltaTime * footSwingSpeed;
-            float angle = Mathf.Sin(footAnimTimer) * footSwingAmount;
-
-            if (footLeft != null) footLeft.localRotation = Quaternion.Euler(angle, 0, 0);
-            if (footRight != null) footRight.localRotation = Quaternion.Euler(-angle, 0, 0);
-        }
-        else
-        {
-            if (footLeft != null) footLeft.localRotation = Quaternion.identity;
-            if (footRight != null) footRight.localRotation = Quaternion.identity;
         }
     }
 
@@ -146,28 +163,41 @@ public class Goomba : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (isDead) return;
+       if (isDead) return;
 
-        if (collision.transform == marioTransform)
+    if (collision.transform == marioTransform)
+    {
+        ContactPoint contact = collision.GetContact(0);
+        float yDiff = marioTransform.position.y - contact.point.y;
+
+        MarioInvulnerability marioInvul = marioTransform.GetComponent<MarioInvulnerability>();
+
+        if (yDiff > stompHeightThreshold)
         {
-            ContactPoint contact = collision.GetContact(0);
-            float yDiff = marioTransform.position.y - contact.point.y;
+            Rigidbody marioRb = marioTransform.GetComponent<Rigidbody>();
+            if (marioRb != null)
+                marioRb.velocity = new Vector3(marioRb.velocity.x, 6f, marioRb.velocity.z);
 
-            if (yDiff > stompHeightThreshold)
+            StartCoroutine(SquashAndDie());
+        }
+        else
+        {
+            if (marioInvul != null && !marioInvul.IsInvulnerable())
             {
-                // Rebota Mario al pisarlo
-                Rigidbody marioRb = marioTransform.GetComponent<Rigidbody>();
-                if (marioRb != null)
-                    marioRb.velocity = new Vector3(marioRb.velocity.x, 6f, marioRb.velocity.z);
+                // ✅ Aplica daño + sonido con MarioHealt
+                MarioHealt marioHealt = marioTransform.GetComponent<MarioHealt>();
+                if (marioHealt != null)
+                    marioHealt.ApplyDamage(1);
 
-                StartCoroutine(SquashAndDie());
-            }
-            else
-            {
-                // Aplica daño a Mario
-                LibSM64.Interop.sm64_mario_apply_damage(0, 1);
+                // ✅ Invulnerabilidad
+                marioInvul.StartInvulnerability(3f);
+
+                // ✅ Detener persecución temporal
+                canChase = false;
+                StartCoroutine(EnableChaseAfterDelay(3f));
             }
         }
+    }
     }
 
     IEnumerator SquashAndDie()
@@ -175,8 +205,13 @@ public class Goomba : MonoBehaviour
         isDead = true;
         currentState = State.Dead;
 
+        StopChaseLoop();
+
+        if (stompAudioClip != null)
+            AudioSource.PlayClipAtPoint(stompAudioClip, transform.position, stompAudioVolume);
+
         Vector3 originalScale = transform.localScale;
-        Vector3 squashedScale = new Vector3(originalScale.x, originalScale.y * 0.2f, originalScale.z);
+        Vector3 squashedScale = new Vector3(originalScale.x, 0.2f, originalScale.z);
 
         float t = 0f;
         while (t < squashDuration)
@@ -187,8 +222,40 @@ public class Goomba : MonoBehaviour
         }
 
         transform.localScale = squashedScale;
-        yield return new WaitForSeconds(0.2f);
+
+        rb.velocity = Vector3.zero; // Para que se quede quieto
+
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
+    }
+
+    IEnumerator EnableChaseAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        canChase = true;
+    }
+
+    void PlayAlertOnce()
+    {
+        if (!hasPlayedAlert && alertAudioClip != null)
+        {
+            AudioSource.PlayClipAtPoint(alertAudioClip, transform.position, alertAudioVolume);
+            hasPlayedAlert = true;
+        }
+    }
+
+    IEnumerator PlayChaseLoopAfterDelay(float delay)
+    {
+        isChaseLoopDelayed = true;
+        yield return new WaitForSeconds(delay);
+        if (!chaseLoopSource.isPlaying && !isDead)
+            chaseLoopSource.Play();
+    }
+
+    void StopChaseLoop()
+    {
+        if (chaseLoopSource != null && chaseLoopSource.isPlaying)
+            chaseLoopSource.Stop();
     }
 
     void OnDrawGizmosSelected()
