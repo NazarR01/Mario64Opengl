@@ -10,9 +10,9 @@ public class MenuP : MonoBehaviour
     public GameObject fadePanel;
 
     [Header("Panel de controles")]
-    [SerializeField] private GameObject controlesPanel; // Panel de controles
-    [SerializeField] private GameObject menuPrincipal;  // Panel u objeto con los botones
-    [SerializeField] private MenuC menuControlScript;   // Script del control del menú (si es un componente aparte)
+    [SerializeField] private GameObject controlesPanel;      // Panel con los controles
+    [SerializeField] private GameObject menuPrincipalPanel;  // Agrupa todos los elementos del menú principal
+    [SerializeField] private MenuC menuControlScript;        // Script del cursor del menú principal (si usas uno)
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class MenuP : MonoBehaviour
 
     void Update()
     {
-        // Si el panel está activo y se presiona Enter
+        // Si los controles están activos y se presiona Enter, se cierran
         if (controlesPanel != null && controlesPanel.activeSelf && Input.GetKeyDown(KeyCode.Return))
         {
             OcultarControles();
@@ -35,7 +35,7 @@ public class MenuP : MonoBehaviour
         {
             fadePanel.SetActive(true);
             var img = fadePanel.GetComponent<Image>();
-            img.color = new Color(0, 0, 0, 0); // Transparente al inicio
+            img.color = new Color(0, 0, 0, 0);
         }
 
         StartCoroutine(FadeAndLoadScene());
@@ -75,27 +75,25 @@ public class MenuP : MonoBehaviour
 #endif
     }
 
-    // Mostrar el panel de controles
     public void MostrarControles()
     {
         if (controlesPanel != null)
             controlesPanel.SetActive(true);
 
-        if (menuPrincipal != null)
-            menuPrincipal.SetActive(false);
+        if (menuPrincipalPanel != null)
+            menuPrincipalPanel.SetActive(false); // Ocultar el contenido del menú principal
 
         if (menuControlScript != null)
-            menuControlScript.enabled = false;
+            menuControlScript.enabled = false; // Desactivar control de navegación si lo tienes
     }
 
-    // Ocultar el panel de controles
     public void OcultarControles()
     {
         if (controlesPanel != null)
             controlesPanel.SetActive(false);
 
-        if (menuPrincipal != null)
-            menuPrincipal.SetActive(true);
+        if (menuPrincipalPanel != null)
+            menuPrincipalPanel.SetActive(true); // Mostrar de nuevo el menú principal
 
         if (menuControlScript != null)
             menuControlScript.enabled = true;
