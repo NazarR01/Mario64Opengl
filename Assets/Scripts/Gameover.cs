@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
-
+using LibSM64;
 public class Gameover : MonoBehaviour
 {
     public GameObject panel;                         // Panel de Game Over
@@ -159,6 +159,7 @@ public class Gameover : MonoBehaviour
             cameraControl.cameraPaused = false;
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+         Interop.MarioDelete(0);
+        SceneManager.LoadScene("LvlSelect");
     }
 }

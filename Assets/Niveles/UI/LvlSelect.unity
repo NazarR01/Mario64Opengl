@@ -1045,7 +1045,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: d24fc6c6ac2978f449c5fecadae9a7ac, type: 3}
   volume: 1
   levelSceneNames:
-  - 
+  - NivelCr
   - Lava land
   - Nivel Survival
   fadePanel: {fileID: 37992652}

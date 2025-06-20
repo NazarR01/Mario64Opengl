@@ -624,7 +624,7 @@ PrefabInstance:
     - target: {fileID: 5992102174779160729, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -265.3
+      value: -345.5
       objectReference: {fileID: 0}
     - target: {fileID: 5992102174779160729, guid: 42ab3808a6d63f04caf744d6658bb046,
         type: 3}
@@ -3531,6 +3531,7 @@ MonoBehaviour:
   Heart: {fileID: 1912748471}
   monedas: {fileID: 1401090139}
   textotimer: {fileID: 362308888}
+  starGrabbed: 0
 --- !u!65 &983914520
 BoxCollider:
   m_ObjectHideFlags: 0

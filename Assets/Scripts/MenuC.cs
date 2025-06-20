@@ -7,6 +7,10 @@ public class MenuC : MonoBehaviour
     public RectTransform cursorDot;       // Punto como cursor
     public Vector2 offset = new Vector2(-20f, 0f); // Menor desplazamiento que la mano
 
+    public AudioClip moveSound;
+    public AudioClip selectSound;
+    [Range(0f, 1f)] public float volume = 1f;
+
     private int currentIndex = 0;
     private float moveDelay = 0.2f;
     private float lastMoveTime = 0f;
@@ -24,12 +28,14 @@ public class MenuC : MonoBehaviour
             {
                 currentIndex = (currentIndex - 1 + menuOptions.Length) % menuOptions.Length;
                 UpdateCursorPosition();
+                PlaySound(moveSound);
                 lastMoveTime = Time.time;
             }
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 currentIndex = (currentIndex + 1) % menuOptions.Length;
                 UpdateCursorPosition();
+                PlaySound(moveSound);
                 lastMoveTime = Time.time;
             }
         }
@@ -38,10 +44,15 @@ public class MenuC : MonoBehaviour
         {
             Button btn = menuOptions[currentIndex].GetComponent<Button>();
             if (btn != null)
+            PlaySound(selectSound);
                 btn.onClick.Invoke();
         }
     }
-
+ void PlaySound(AudioClip clip)
+    {
+        if (clip != null)
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
+    }
     void UpdateCursorPosition()
     {
         if (cursorDot != null && currentIndex < menuOptions.Length)

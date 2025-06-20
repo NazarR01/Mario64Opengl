@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using LibSM64;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
@@ -128,6 +128,7 @@ public class PauseManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+         Interop.MarioDelete(0);
+        SceneManager.LoadScene("LvlSelect");
     }
 }
