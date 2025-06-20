@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f597f7437d177b44bc07d02e6434b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoInicial: 120
+  tiempoInicial: 5
   textoCronometro: {fileID: 404389553}
   textoMonedas: {fileID: 226390628}
   mario: {fileID: 1750007079}
@@ -6097,12 +6097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee83ef642c5dbf4b8f2d65c7e851f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hundimiento: 0.5
-  velocidad: 2
-  playerTag: Player
-  posicionInicial: {x: 0, y: 0, z: 0}
-  marioEncima: 0
-  fueActivada: 0
 --- !u!1001 &1988717415
 PrefabInstance:
   m_ObjectHideFlags: 0

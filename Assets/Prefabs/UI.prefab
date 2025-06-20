@@ -1551,7 +1551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5926667564994599976}
   - component: {fileID: 5926667564994599977}
-  - component: {fileID: 2314933673952932761}
+  - component: {fileID: 8980890960106599256}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1594,7 +1594,7 @@ MonoBehaviour:
   emptyHeart: {fileID: 21300000, guid: df60688bc2f811548972c618cd540404, type: 3}
   gameOverPanel: {fileID: 5926667563822671214}
   gameoverScript: {fileID: 5926667563822671218}
---- !u!114 &2314933673952932761
+--- !u!114 &8980890960106599256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

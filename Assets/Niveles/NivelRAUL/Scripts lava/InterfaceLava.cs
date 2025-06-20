@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 public class InterfaceLava : MonoBehaviour
 {
    public float tiempoInicial = 120f;
-
     private float tiempoRestante;
 
     public Text textoCronometro;
@@ -22,6 +21,7 @@ public class InterfaceLava : MonoBehaviour
 
     void Start()
     {
+        CoinLava.ResetCoinCount(); // Resetear monedas al iniciar escena
         tiempoRestante = tiempoInicial;
 
         if (mario != null)
@@ -53,15 +53,28 @@ public class InterfaceLava : MonoBehaviour
         {
             textoMonedas.text = $"Coins: {CoinLava.GetCoinCount()}";
         }
-        
 
         // Matar a Mario si el tiempo llega a 0
         if (tiempoRestante <= 0 && marioDetector != null)
         {
             tiempoAgotado = true;
+
+            // FORZAMOS muerte de Mario
             Interop.sm64_mario_set_health(0, 0x0000);
-             CoinLava.ResetCoinCount(); // resetea el contador
-             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //  REINICIAR LA ESCENA
+
+            // Apagar visualmente a Mario (por si Interop no lo mata)
+            if (mario != null)
+                mario.SetActive(false);
+
+            // 🔁 Reiniciar escena tras breve delay
+            StartCoroutine(ReiniciarEscenaConRetraso());
         }
+    }
+
+    IEnumerator ReiniciarEscenaConRetraso()
+    {
+        CoinLava.ResetCoinCount(); // Asegura reinicio del contador
+        yield return new WaitForSeconds(0.1f); // Delay para que se procese todo
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
