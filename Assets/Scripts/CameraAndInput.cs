@@ -66,28 +66,45 @@ public class CameraAndInput : SM64InputProvider
     {
          if (cameraObject == null || inStarCutscene || cameraPaused)
         return;
-        if (cameraObject == null) return;
-        if (inStarCutscene) return; // sin control normal durante la cinemática
 
-        // 1) Rotación horizontal con el mouse
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        yaw += mouseX;
+    // 1) Rotación horizontal con el mouse
+    float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+    yaw += mouseX;
 
-        // 2) Zoom con ScrollWheel
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        cameraDistance -= scroll * zoomSpeed;
-        cameraDistance = Mathf.Clamp(cameraDistance, minZoom, maxZoom);
+    // 2) Zoom con ScrollWheel
+    float scroll = Input.GetAxis("Mouse ScrollWheel");
+    cameraDistance = Mathf.Clamp(cameraDistance - scroll * zoomSpeed, minZoom, maxZoom);
 
-        // 3) Aplicamos rotación: pitch fijo en X, yaw variable en Y
-        cameraObject.transform.rotation = Quaternion.Euler(fixedPitch, yaw, 0f);
+    // 3) Aplicamos rotación
+    cameraObject.transform.rotation = Quaternion.Euler(fixedPitch, yaw, 0f);
 
-        // 4) Calculamos posición deseada DETRÁS de Mario
-        Vector3 marioPos = transform.position;
-        Vector3 forward = cameraObject.transform.forward;
-        Vector3 idealCamPos = marioPos - forward * cameraDistance;
-        idealCamPos.y = marioPos.y + lookAtHeight;
+    // 4) Posición ideal
+    Vector3 marioPos = transform.position;
+    Vector3 forward  = cameraObject.transform.forward;
+    Vector3 idealCamPos = marioPos - forward * cameraDistance;
+    idealCamPos.y = marioPos.y + lookAtHeight;
 
-        cameraObject.transform.position = idealCamPos;
+    // 5) Detección de colisión
+    Vector3 dir = (idealCamPos - marioPos).normalized;
+    float maxDist = Vector3.Distance(marioPos, idealCamPos);
+    RaycastHit hit;
+    float finalDist = maxDist;
+
+    // SphereCast para evitar atraversar paredes
+    if (Physics.SphereCast(
+            marioPos + Vector3.up * lookAtHeight * 0.5f,   // un poco elevado
+            0.3f,                                          // radio del sphere
+            dir,
+            out hit,
+            maxDist))
+    {
+        finalDist = hit.distance - 0.1f;  // offset para que no quede pegada
+    }
+
+    // 6) Aplicar posición final
+    Vector3 finalPos = marioPos + dir * finalDist;
+    finalPos.y = idealCamPos.y; // conservar altura
+    cameraObject.transform.position = finalPos;
     }
 
     // Métodos de SM64InputProvider

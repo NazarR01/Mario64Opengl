@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4774153977611556343}
   - component: {fileID: 4774153977611556340}
   - component: {fileID: 4774153977611556341}
-  - component: {fileID: 4774153977611556338}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -78,26 +77,3 @@ CapsuleCollider:
   m_Height: 0.969825
   m_Direction: 1
   m_Center: {x: -0.00036025047, y: -0.015087485, z: 0}
---- !u!114 &4774153977611556338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774153977611556336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d454740edb0c4a44ab15f24f8ac6333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraObject: {fileID: 0}
-  mouseSensitivity: 2
-  fixedPitch: 20
-  cameraDistance: 10
-  zoomSpeed: 2
-  minZoom: 2
-  maxZoom: 10
-  lookAtHeight: 7
-  starCutsceneDuration: 3
-  starCutsceneRadiusOffset: 2.5
-  starCutsceneHeightOffset: 1.5

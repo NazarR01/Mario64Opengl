@@ -17,7 +17,10 @@ public class MarioHealt : MonoBehaviour
     void Start()
     {
         if (gameOverPanel != null)
-            gameOverPanel.SetActive(false); // Asegura que esté oculto al inicio
+            gameOverPanel.SetActive(false);
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
     }
 
     void Update()
