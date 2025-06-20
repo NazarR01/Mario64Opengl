@@ -58,6 +58,30 @@ public class Star : MonoBehaviour
             StartCoroutine(ReturnToMenuAfterDelay());
         }
     }
+public void TriggerVictory()
+{
+    if (starGrabbed) return;
+    starGrabbed = true;
+
+    Debug.Log("Victoria manual activada");
+
+    Interop.sm64_mario_set_cutscene_action((int)marioId, ACT_STAR_DANCE_EXIT, 0);
+
+    var camScript = FindObjectOfType<CameraAndInput>();
+    if (camScript != null)
+        camScript.cameraPaused = true;
+
+    if (mainCamera != null)
+        mainCamera.gameObject.SetActive(false);
+
+    CreateVictoryCamera();
+    PositionVictoryCamera();
+
+    if (winPanel != null)
+        winPanel.SetActive(true);
+
+    StartCoroutine(ReturnToMenuAfterDelay());
+}//llamar asi en el otro script   starScript?.TriggerVictory();
 
     void CreateVictoryCamera()
     {
