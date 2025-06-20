@@ -187,7 +187,7 @@ public class Goomba : MonoBehaviour
                 // ✅ Aplica daño + sonido con MarioHealt
                 MarioHealt marioHealt = marioTransform.GetComponent<MarioHealt>();
                 if (marioHealt != null)
-                    marioHealt.ApplyDamage(1);
+                    Interop.sm64_mario_apply_damage(0, 4);
 
                 // ✅ Invulnerabilidad
                 marioInvul.StartInvulnerability(3f);
