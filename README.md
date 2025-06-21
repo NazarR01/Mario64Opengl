@@ -13,11 +13,18 @@ video demo: https://youtu.be/D9tLAX1c3BA
    `SuperMario64.exe`
 
 2. **Controls** (Keyboard):
-   - Move: `Arrow Keys` or `WASD`
-   - Jump: `Spacebar`
-   - Run: `Shift`
-   - Camera: Move mouse
-   - Quit game: `Esc`
+
+   - Movement:         W, A, S, D  
+   - Free camera:      Mouse (move)  
+   - Jump:             Spacebar  
+   - Crouch:           Left Shift  
+   - Attack:           Left Mouse Click  
+   - Pause:            Esc  
+   - Navigate Menu:    Arrow Keys or W/S  
+   - Confirm:          Enter / Space  
+   - Cancel / Back:    Esc
+
+
 
 3. Collect stars, defeat enemies, and explore 3D worlds just like in the original game!
 
@@ -49,14 +56,14 @@ video demo: https://youtu.be/D9tLAX1c3BA
 - **Unity 2019.3.10f1**
 - **Visual Studio Community 2019**
 - **C#**
-- **OpenGL (indirectly via plugins)**
+- **OpenGL (Main Unity Renderer)**(in case you want to edit libsm64)
 - **libsm64**: A native library used to bring real Mario 64 logic into Unity
-- **GLFW** and **GLEW** (optional for low-level rendering)
+
 
 ### 💡 Setup Instructions
 
 1. Install [Unity Hub](https://unity.com/download).
-2. Inside Unity Hub, install Unity (version 2019.3.10f1 or newer).
+2. Inside Unity Hub, install Unity (version 2019.3.10f1).
 3. Clone this repo:
 
   
@@ -92,3 +99,28 @@ Have fun jumping into a 3D adventure! 🍄✨
 
 
 ---
+## 👥 Authors
+
+This project was developed by:
+
+- **Nazar Roberto Narvaez Matamoros** – Project lead, programmer 
+  [GitHub](https://github.com/NazarR01)
+- **Cesar Armando Lopez Cedeño** - Programmer
+  [GitHub](https://github.com/LpzCesar1604)
+- **Jonathan Josue Castillo Martinez** - Programmer
+  [GitHub](https://github.com/jonathancm01)
+- **Raul Antonio Castillo Ramirez** - Programmer
+  [GitHub](https://github.com/jonathancm01)
+
+Special thanks to:
+
+- The creators of **libsm64**  
+  [libsm64 GitHub](https://github.com/libsm64/libsm64)
+
+  [libsm64 Unity dev GitHub](https://github.com/libsm64/libsm64-unity-dev)
+
+- The open-source Super Mario 64 decompilation teams  
+  [sm64 decomp](https://github.com/n64decomp/sm64)
+
+- Everyone in the Unity and open-source community who made this possible!
+
